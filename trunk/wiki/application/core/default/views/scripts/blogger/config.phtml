@@ -1,0 +1,28 @@
+<section class="blogger_config">
+	<form method="post" action="">
+		<dl>
+			<dt>博客欢迎语</dt>
+			<dd>
+				<input class="text" type="text" name="description" maxlength="20"
+					value="" />（建议不超过20个字）
+			</dd>
+			<dt>博客皮肤</dt>
+			<dd class="skinlist">
+				<ul class='clfix'>
+					<?php foreach($this->skinList as $skin => $img):?>
+						<?php if($this->defaultSkin==$skin):?>
+						<li><label for="<?php echo $skin?>"><img src='<?php echo $img;?>' /></label><input type='radio'
+						name='skin' id="<?php echo $skin;?>" value='<?php echo $skin;?>' checked="checked" /></li>
+						<?php else:?>
+							<li><label for="<?php echo $skin?>"><img src='<?php echo $img;?>' /></label><input type='radio'
+						name='skin' id="<?php echo $skin;?>" value='<?php echo $skin;?>' /></li>
+						<?php endif;?>
+					<?php endforeach;?>
+				</ul>
+			</dd>
+			<dd>
+				<input type="submit" value="保存" />
+			</dd>
+		</dl>
+	</form>
+</section>

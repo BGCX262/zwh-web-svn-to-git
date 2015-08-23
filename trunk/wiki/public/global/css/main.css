@@ -1,0 +1,493 @@
+@CHARSET "UTF-8";
+/*
+ * body style
+ */
+body{
+    background: #FFF;
+}
+/*
+ * 分页样式
+ */
+.paginationControl{
+    margin-top: 15px;
+}
+.paginationControl .page_num{
+    padding: 1px 4px;
+    border: 1px solid #CCC;
+    text-decoration: none;
+    color: #000;
+}
+.paginationControl a.page_num:hover{
+    border-color: red;
+}
+.paginationControl a.current{
+    border-color:#0196E3;
+}
+.paginationControl .disabled{
+    color: #C2C2C2;
+}
+
+/*
+ * 导航
+ */
+#top_menu {
+    background: url("/global/images/site_nav/top_menu_bg.gif") repeat-x scroll center top #FFFFFF;
+    height: 106px;
+    width: 100%;
+}
+#top_menu .searchform {
+    clear: both;
+    height: 32px;
+    margin: 0 auto;
+    width: 975px;
+}
+#top_menu .searchform ul li {
+    float: left;
+}
+#top_menu .searchform ul li img{
+    display: block;
+}
+#top_menu .searchform ul li a {
+    color: #FFFFFF;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-weight: bold;
+    line-height: 32px;
+    text-align: center;
+    text-decoration: none;
+}
+#top_menu .searchform .left {
+    background: url("/global/images/site_nav/search_l.gif") no-repeat scroll left top transparent;
+    float: left;
+    height: 32px;
+    width: 80px;
+}
+#top_menu .searchform .right {
+    background: url("/global/images/site_nav/search_r.gif") no-repeat scroll left top transparent;
+    float: right;
+    height: 32px;
+    width: 304px;
+}
+#top_menu .searchform .home a {
+    background: url("/global/images/site_nav/search_home.gif") no-repeat scroll left top transparent;
+    color: #FFFFFF;
+    float: left;
+    font-weight: 900;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    width: 157px;
+}
+#top_menu .searchform form{
+    padding-left: 113px;
+    background: url("/global/images/site_nav/search_bg.gif") no-repeat 0 0;
+    float:left;
+}
+#top_menu .searchform .inputtext {
+    background: url("/global/images/site_nav/search_input.gif") no-repeat scroll left top transparent;
+    border: 0 none;
+    color: #666666;
+    float: left;
+    font-family: "宋体",Arial,Verdana;
+    font-size: 12px;
+    height: 16px;
+    line-height: 16px;
+    padding: 8px 0 8px 18px;
+    width: 242px;
+}
+#top_menu .searchform .submit {
+    border: 0 none;
+    color: #FFFFFF;
+    cursor: pointer;
+    float: left;
+    font-weight: 600;
+    height: 32px;
+    margin: 0;
+    padding: 0;
+    width: 61px;
+    background: url(/global/images/site_nav/search_button.gif) no-repeat 0 0;
+}
+#mainmenu_top {
+    background: url("/global/images/site_nav/nav_bg.gif") repeat-x scroll center bottom transparent;
+    height: 42px;
+    margin: 0 auto;
+    width: 975px;
+}
+#mainmenu_top UL LI {
+    float: left;
+}
+#mainmenu_top UL LI A {
+    background: url("/global/images/site_nav/line1.gif") no-repeat scroll right 6px transparent;
+    color: #555555;
+    cursor: pointer;
+    display: block;
+    font-weight: bold;
+    line-height: 32px;
+    padding: 6px 0 2px;
+    text-align: center;
+    text-decoration: none;
+    width: 100px;
+}
+#mainmenu_top .menu-lft {
+    background: url("/global/images/site_nav/nav_l.gif") no-repeat scroll left bottom transparent;
+    height: 42px;
+    padding-left: 10px;
+}
+#mainmenu_top .menu-rht {
+    background: url("/global/images/site_nav/nav_r.gif") no-repeat scroll right bottom transparent;
+    height: 42px;
+}
+#mainmenu_top ul li a:hover {
+    color: #3D8408;
+}
+
+.blog_banner{
+    width: 980px;
+    height: 150px;
+    text-align:center;
+}
+.blog_banner h1{
+	font-size:35px;
+	margin:40px auto 0;
+}
+/*
+ * 文章页面
+ */
+.article{
+	margin:10px 10px 0;
+}
+/*
+ * 文章管理页面 /aticle/index
+ */
+ .article_manage .article_list{
+     margin: 20px;
+ }
+ .article_manage .article_list .list_item{
+    background:transparent url("../images/line.gif") repeat-x center bottom;
+  }
+  .article_manage .article_list .list_item .title{
+    margin: 10px 0;
+  }
+ .article_manage .article_list .list_item .title h2{
+     font: 19px/30px 'Microsoft YaHei';
+     line-height: 19px;
+ }
+ .article_manage .article_list .list_item .original h2{
+     background: url("../images/original.gif") no-repeat 0 0;
+     padding-left: 30px;
+ }
+ .article_manage .article_list .list_item .translate h2{
+     background: url("../images/translate.gif") no-repeat 0 0;
+     padding-left: 30px;
+ }
+  .article_manage .article_list .list_item .repost h2{
+     background: url("../images/repost.gif") no-repeat 0 0;
+     padding-left: 30px;
+  }
+ .article_manage .article_list .list_item .title h2 a{
+     color: #000;
+     line-height: 19px;
+     text-decoration: none;
+ }
+ .article_manage  .article_list .list_item .title h2 a:hover{
+     color: #666;
+ }
+ .article_manage .article_list .list_item .description{
+    color: #666666;
+    font: 14px/24px Arial;
+    text-align: left;
+ }
+  .article_manage .article_list .list_item .manage{
+    color: #999999;
+    font: 12px/24px Arial;
+    padding: 5px 0;
+    text-align: right;
+  }
+ .article_manage .article_list .list_item .manage span{
+     margin: 0 5px;
+ }
+ .article_manage .article_list .list_item .manage span a{
+      color: #0196E3
+ }
+ .article_manage .article_list .paginationControl{
+    text-align: right;
+    padding:5px 25px 0 0;
+ }
+/*
+ * 文章详情页面 /aritcle/detail
+ */
+.article_detail{
+    background-color: #FFF;
+    border: 1px solid #CCC;
+    padding: 0 5px 5px;
+    overflow-x: hidden;
+}
+.article_detail .title{
+    margin: 20px 0 10px;
+    text-align: center;
+}
+.article_detail .title span{
+    font: 20px/1.5 'Microsoft YaHei';
+}
+.article_detail .info{
+    height: 24px;
+    line-height: 17px;
+    overflow: hidden;
+    text-align: center;
+}
+.article_detail .info small {
+    color: #999999;
+    font-size: 12px;
+    margin-left: 8px;
+    margin-right: 3px;
+}
+.article_detail .info small  em{
+     color: #777777;
+}
+.article_detail .content{
+    font: 14px/26px '宋体';
+    padding-top: 20px;
+}
+.article_detail .cut_off hr{
+    border: none;
+    border-top: 1px dashed #999;
+    height: 1px;
+}
+.article_detail .context{
+    margin: 10px 0;
+}
+.article_detail .context li{
+    color: #999;
+}
+.article_detail .context li a{
+    color: #666;
+}
+.article_detail .original{
+     background: url("../images/original.gif") no-repeat 0 center;
+     padding-left: 30px;
+}
+.article_detail .translate{
+     background: url("../images/original.gif") no-repeat 0 center;
+     padding-left: 30px;
+}
+.article_detail .repost{
+     background: url("../images/original.gif") no-repeat 0 center;
+     padding-left: 30px;
+}
+/*   查看评论样式   */
+.comment .comment_list .list_item{
+    margin: 10px 0;
+}
+.comment .comment_list .list_item .comment_content .photo{
+    display: block;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+}
+.comment .comment_list .list_item .comment_content .photo{
+  vertical-align: top;
+}
+.comment .comment_list .list_item .comment_content .photo img{
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+}
+.comment .comment_list .list_item .comment_content .detail{
+    padding: 0 0 10px 15px;
+    width: 100%;
+    color: #999;
+}
+.comment .comment_list .list_item .comment_content .detail .talk{
+    color: #000;
+    margin-left: 5px;
+}
+.comment .comment_list .list_item .comment_content .detail .manage{
+    margin-top:10px;
+    height: 18px;
+}
+.comment .comment_list .list_item .comment_content .detail .time{
+    font-size: 12px;
+    color: #888;
+}
+.comment .comment_list .list_item .comment_content .detail .reply_btn{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url("../images/reply.gif") no-repeat 0 0;
+    margin-left: 20px;
+    vertical-align: middle;
+    border:1px solid #FFF;
+}
+.comment .comment_list .list_item .comment_content .detail .del_btn{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url("../images/del.png") no-repeat 0 0;
+    margin-left: 10px;
+    vertical-align: middle;
+    border:1px solid #FFF;
+}
+.comment .comment_list .list_item .comment_content .detail .manage a:hover{
+    border: 1px solid #CCC;
+}
+.comment .comment_list .list_item .comment_reply{
+    margin-left: 50px;
+    background-color: #F3FAFF;
+}
+.comment .comment_list .list_item .comment_reply .detail .manage a{
+    border-color: #F3FAFF;
+}
+.comment .comment_list .list_item .comment_reply .photo{
+    display: block;
+    width: 35px;
+    height: 35px;
+    overflow: hidden;
+    margin:5px 0 0 5px;
+}
+.comment .comment_list .list_item .comment_reply .photo img{
+    width:35px;
+    height:35px;
+    display: inline-block;
+}
+.comment h2{
+    margin: 10px 0;
+}
+.comment .nickname{
+    margin: 10px 0;
+}
+/*
+ * 文章编辑页面
+ */
+.post_edit{
+}
+.post_edit .article_title{
+    margin: 10px 0;
+}
+.post_edit .set_title .set_atype{
+    height: 22px;
+    padding: 1px;
+}
+.post_edit .set_title .title{
+    width: 560px;
+    height: 19px;
+}
+.post_edit .content{
+    margin: 10px 0;
+}
+.post_edit .cate aside{
+    float: left;
+    width: 100px;
+}
+.post_edit .cate ul{
+    float: left;
+    width: 880px;
+}
+.post_edit .cate li{
+    float: left;
+    width: 110px;
+    overflow: hidden;
+    text-align: right;
+    margin-right: 10px;
+}
+.post_edit .cate li label{
+    margin-right: 5px;
+    vertical-align: bottom;
+}
+.post_edit .cate li input{
+    vertical-align: middle;
+}
+.post_edit .submit{
+    margin-top: 10px;
+}
+/*
+ * 评论列表
+ */
+.comlist nav{
+    margin-bottom: 10px;
+    border: 1px solid #CCC;
+    padding: 3px 0 3px 5px;
+    background-color: #F4F4F4;
+    color: #000;
+}
+.comlist nav a{
+    color: #0196E3;
+}
+.comlist table{
+    border: 1px solid #CCC;
+}
+.comlist table th{
+    text-align: left;
+}
+.comlist table th.title{
+    text-indent: 25px;
+}
+.comlist .list_item{
+    background-color: #F2F2F2;
+}
+.comlist .list_item .title{
+    padding: 3px 0 3px 5px;
+}
+.comlist .del{
+    text-align:center;
+}
+.comlist .del a{
+    color: #0196E3;
+}
+.comlist .reply_who small{
+    color: #F00;
+    padding:5px 0 0 5px;
+}
+.comlist .reply{
+    padding: 5px;
+}
+.comlist .paginationControl{
+    text-align: right;
+    padding:5px 25px 5px 0;
+    border-top: 1px dotted #E2E2E2;
+}
+/*
+ * 分类管理页面
+ */
+.category table{
+    border: 1px solid #CCC;
+}
+.category table th{
+    border-bottom: 1px solid #DDD;
+}
+.category table tr{
+   height: 50px;
+}
+.category table tr td{
+    text-align: left;
+}
+.category table tr td a{
+    color: #2196E3;
+}
+.category table .cate{
+    text-indent: 5px;
+    text-align: left;
+}
+.category table .sub_cates{
+    text-indent: 50px;
+    text-align: left;
+}
+/*
+ * 博客配置页面
+ */
+.blogger_config form input.text{
+    height: 20px;
+    width: 500px;
+}
+.blogger_config form dt{
+    margin: 5px 0 10px 0;
+}
+.blogger_config form .skinlist li{
+    width: 300px;
+    height: 300px;
+    border: 1px solid #DDD;
+    float: left;
+    margin: 5px 20px 20px 0;
+.blogger_config form .skinlist li img{
+    display: block;
+}

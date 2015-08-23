@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>dialog</title>
+	<link rel="stylesheet" href="dialog.css">
+	<script src="dialog.js"></script>
+</head>
+<body>
+	<div class="demo" id="demo">
+		click me to get dialog.
+	</div>
+	<script>
+		window.onload = function(){
+			var dialog = new Dialog();
+			var demo = document.getElementById('demo');
+
+			demo.onclick = function(){
+				dialog.show();
+			}
+		}
+	</script>
+</body>
+</html>

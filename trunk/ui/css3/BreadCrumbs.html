@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>breadcrumbs效果</title>
+	<style type="text/css">
+		ul{
+			margin:0;
+			padding:0;
+			list-style:none;
+		}
+		demo {
+		   width: 500px;
+		   margin: 0 auto;
+		   display:block;
+		   clear:both;
+		   content:'\20';
+		}  
+		.nav_block {
+		  margin-top: 40px;
+		  float: left;
+		  clear:both;
+		  border-width: 1px;
+		  border-style: solid;
+		  border-color: #dedede transparent #b5b4b0 #c6c6c5;
+		}
+		
+		.nav_block li {
+		  float: left;
+		  text-shadow: 0 1px 0 #fff;
+		  background-color: #e6e6e6;
+		}
+		
+		.nav_block li a {
+		  position: relative;
+		  display: block;
+		  color: #7d7c7c;
+		  padding: 0 25px;
+		  height: 40px;
+		  line-height: 40px;
+		} 
+		.nav_block li a:before{
+		  position: absolute;
+		  font-family: 'entypo';
+		  font-style: normal;
+		  speak: none;
+		  font-weight: normal;
+		  font-smoothing: antialiased;
+		  font-size: 50px;
+		  margin-right: 8px;
+		  text-indent: 8px;
+		  z-index: 3;
+		  transform: translateY(-40px);
+		}
+		.nav_block li a:after {
+		  position: absolute;
+		  top: 5px;
+		  right: -14px;
+		  content: "";
+		  width: 32px;
+		  height: 35px;
+		  box-shadow: 0 1px 0 #c6c6c5 inset,-1px 0 0 #c6c6c5 inset, 1px 0 0 #fff,0 -1px 0 #fff;
+		  background-color: #e6e6e6;
+		   clip: rect(-1px 31px 29px 1px);
+		  transform: rotate(45deg);
+		  z-index: 2;
+		}
+		.nav_block li a:hover,
+		  .nav_block li .active {  
+		  text-decoration: none;
+		  margin: -1px;
+		}
+		.item1 li a:hover,
+		  .item1 li .active {
+		  color: #aa1010;
+		  text-shadow: 0 1px 0 #f28383;
+		  border:1px solid #e00e0e;
+		  box-shadow: 0 1px 0 #f17a7a inset;
+		  background-color: #eb4141;
+		}
+		.item2 li a:hover,
+		  .item2 li .active {
+		  color: #825812;
+		  text-shadow: 0 1px 0 #fff9ee;
+		  border:1px solid #edb524;
+		  box-shadow: 0 1px 0 #ffd692 inset;
+		  background-color: #ffc15b;
+		}
+		.nav_block li a i {
+		  display: inline-block;
+		  font-style: normal;
+		}
+		.nav_block li a:not(.active):hover i {
+		  animation: moveText 300ms ease;
+		  padding-left: 45px;
+		  font-size: 18px;
+		}
+		.item1 li a:not(.active):hover:after,
+		  .item1 li .active:after {
+		  background-color: #eb4141;
+		  box-shadow: 0 1px 0 #e00e0e inset,-1px 0 0 #e00e0e inset, 1px 0 0 #d4aead,0 -1px 0 #d4aead;
+		}
+		.item2 li a:not(.active):hover:after,
+		  .item2 li .active:after {
+		  background-color: #ffbd51;
+		  box-shadow: 0 1px 0 #e6b42e inset,-1px 0 0 #e6b42e inset, 1px 0 0 #d4aead,0 -1px 0 #d4aead;
+		}
+		.nav_block li:nth-child(1) a:before {
+		  content: "\2302";
+		}
+		.nav_block li:nth-child(2) a:hover:before {
+		  content: "\268f";
+		}
+		.nav_block li:nth-child(3) a:hover:before {
+		  content: "\2630";
+
+		}
+		.nav_block li:nth-child(4) a:hover:before {
+		  content: "\1f4c4";
+		}
+		.nav_block li a:not(.active):hover:before {
+		  transform: translateY(-7px);
+		  animation: moveIcon 300ms ease;
+		  font-size: 50px;
+		}
+		.nav_block li .active {
+		  font-size: 0;
+		}
+		.nav_block li .active:before {
+		  text-indent: -8px;
+		  transform: translateY(-7px);
+		}
+		.nav_block li .active:after {
+		  right: -15px;
+		}
+		.nav_block li .active:hover:before,
+		  .nav_block li .active:hover i {
+		  animation: none;
+		}
+		@keyframes moveText {
+		   from {
+		      transform: translateY(80px);
+		      opacity: 0.1;
+		   }
+		   to {
+		      transform: translate(0);
+		      opacity: 1;
+		   }
+		}
+		@keyframes moveIcon {
+		   from {
+		      transform: translateY(-80px);
+		      opacity: 0.1;
+		   }
+		   to {
+		      transform: translate(0);
+		      opacity: 1;
+		   }
+		}
+		@font-face {
+		  font-family: 'entypo';
+		  src:url('fonts/entypo.eot');
+		  src:url('fonts/entypo.eot?#iefix') format('embedded-opentype'),
+		    url('fonts/entypo.svg#entypo') format('svg'),
+		    url('fonts/entypo.woff') format('woff'),
+		    url('fonts/entypo.ttf') format('truetype');
+		  font-weight: normal;
+		  font-style: normal;
+		}
+	</style>
+</head>
+<body>
+	<div class="demo">
+		<ul class="nav_block clearfix item1">
+		  <li><a href="#" class="active"><i>Home</i></a></li>
+		  <li><a href="#"><i>Main Category</i></a></li>
+		  <li><a href="#"><i>Sub Category</i></a></li>
+		  <li><a href="#"><i>Item</i></a></li>
+		</ul>
+		<ul class="nav_block clearfix item2">
+		  <li><a href="#" class="active"><i>Home</i></a></li>
+		  <li><a href="#"><i>Main Category</i></a></li>
+		  <li><a href="#"><i>Sub Category</i></a></li>
+		  <li><a href="#"><i>Item</i></a></li>
+		</ul>
+	</div>
+</body>
+</html>

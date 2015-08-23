@@ -1,0 +1,12 @@
+<article class="article">
+		<?php if($this->main_page):?>
+			<?php echo $this->main_page?>
+		<?php else:?>
+			<aside>
+				<h1 style="font-size:30px;margin-top:90px;">欢迎使用 虫儿飞 开发文档系统！</h1>
+			</aside>	
+		<?php endif;?>
+		<aside>
+			<a href="<?php echo '/'.BLOGGER_NAME.'/post/build/type/main_page'?>">修改</a>
+		</aside>
+</article>

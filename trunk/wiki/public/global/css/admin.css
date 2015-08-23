@@ -1,0 +1,223 @@
+@CHARSET "UTF-8";
+.back_header {
+    background: url(/global/images/backend_nav.gif) repeat-x 0 0;
+    height: 90px;
+    position: relative;
+}
+.back_header .help_nav{
+    position: absolute;
+    right: 20px;
+    bottom:30px;
+}
+#menu {
+    width: 980px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+#menu ul {
+    display: inline;
+}
+#menu ul li {
+    display: inline;
+}
+#menu ul.home {
+    margin-left: 15px;
+}
+#menu ul.home a {
+    font-size: 20px;
+    color: #4F9B43;
+    text-decoration: none;
+}
+#menu ul.navigation {
+    margin-left: 50px;
+    position: relative;
+    top: -3px;
+}
+#menu ul.navigation li {
+    padding: 0 10px;
+    border-right: 1px solid #E2E2E2;
+}
+#menu ul.navigation li a {
+    color: #333;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+#menu ul.navigation li a:hover {
+    color: #7DAF4F;
+}
+#menu ul.navigation li a:active {
+    color: #CC3366;
+}
+/*
+ * body style
+ */
+body{
+    background: #FFF;
+}
+/*
+ * 分页样式
+ */
+.paginationControl{
+    margin-top: 15px;
+}
+.paginationControl .page_num{
+    padding: 1px 4px;
+    border: 1px solid #CCC;
+    text-decoration: none;
+    color: #000;
+}
+.paginationControl a.page_num:hover{
+    border-color: red;
+}
+.paginationControl a.current{
+    border-color:#0196E3;
+}
+.paginationControl .disabled{
+    color: #C2C2C2;
+}
+/*
+ * 用户管理
+ */
+.check_user .userlist{
+    margin: 20px 0 0 0;
+    padding: 0 5px;
+    border: 1px solid #CCC;
+}
+.check_user .userlist th{
+    text-align: left;
+    height: 30px;
+    background-color:#FFFAFA;
+}
+.check_user .userlist th.handle{
+    text-align: center;
+}
+.check_user .userlist td{
+    height: 25px;
+}
+.check_user .userlist td.del{
+    text-align: center;
+}
+.check_user table th.th_id{
+    text-indent: 5px;
+}
+.check_user table td.td_id{
+    text-indent: 5px;
+}
+.check_user .list_item{
+    background-color: #F2F2F2;
+}
+.check_user .del{
+    text-align:center;
+}
+.check_user .del a{
+    color: #0196E3;
+}
+.check_user .paginationControl{
+    text-align: right;
+    padding:5px 25px 5px 0;
+    border-top: 1px dotted #E2E2E2;
+}
+/*
+ * 网站导航链接管理
+ */
+.navs{
+    border: 1px solid #DDD;
+}
+.navs th{
+   text-align: left;
+   height: 30px;
+   background-color:#FFFAFA; 
+}
+.navs th.th_link{
+    text-indent: 55px;
+}
+.navs td{
+    height: 25px;
+}
+.navs td.td_links{
+    text-indent: 5px;
+    color: #0196E3;
+}
+.navs td.td_links a{
+    color: #0196E3;
+}
+.navs td.add_nav{
+    text-indent: 5px;
+}
+.user_navs{
+    border: 1px solid #DDD;
+    margin-top:20px;
+}
+.user_navs th{
+   text-align: left;
+   height: 30px;
+   background-color:#FFFAFA; 
+}
+.user_navs th.th_link{
+    text-indent: 60px;
+}
+.user_navs td{
+    height: 25px;
+}
+.user_navs td.td_links{
+    text-indent: 5px;
+    color: #0196E3;
+}
+.user_navs td.td_links a{
+    color: #0196E3;
+}
+.user_navs td.add_nav{
+    text-indent: 5px;
+}
+/*
+ * webset
+ */
+.blogger_set {
+   padding-bottom: 20px;
+}
+.blogger_set table tr td.right {
+    padding-top: 6px;
+    text-align: right;
+}
+.blogger_set table tr td {
+    height: 18px;
+    line-height: 18px;
+    padding: 5px 3px;
+    text-align: left;
+}
+.blogger_set table tr td dfn {
+    color: #FF0000;
+    font-style: normal;
+    padding-right: 5px;
+}
+.blogger_set .inputbox {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CACACA;
+    color: #333333;
+    display: inline;
+    float: left;
+    height: 18px;
+    line-height: 18px;
+    margin-right: 5px;
+    padding: 3px;
+    width: 200px;
+}
+.blogger_set .cache_set li{
+    display : inline;
+    margin-right : 10px;
+}
+.blogger_set .cache_set li input{
+    margin-left: 3px;
+    vertical-align: middle;
+}
+.blogger_set .submit {
+    margin-top: 20px;
+}
+.error{
+    color: red;
+}
+.validate_right{
+    color : #2C0;
+}
+

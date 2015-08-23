@@ -1,0 +1,30 @@
+<header class="back_header">
+	<section id="top_nav">
+		<nav class="help_nav">
+			<?php 
+				$user = new Zend_Session_Namespace('user');
+				//echo $user->nickname;
+				if(!empty($user->nickname)){
+					echo "<span style='color:red;'>".$user->nickname."</span> 欢迎您！|";
+				}else{
+					echo "<span style='color:red;'>您还未登录！</span>|
+						<a href='/".BLOGGER_NAME."/user/login'>登录</a>|
+						<a href='#'>注册</a>|";
+				}
+			?>
+			<?php 
+				if(!empty($user->nickname)){
+					echo "<a href='/".BLOGGER_NAME."/user/logout'>退出</a>";
+				}
+			?>
+		</nav>
+	</section>
+	<nav id="menu">  
+	    <ul class="home">
+	        <li><a href="<?php echo '/'.BLOGGER_NAME;?>" title="博客主页">首 页</a></li>
+	    </ul>	
+       <?php 
+       		echo  $this->action('render', 'menu', null,array('menu' => $this->mainMenuId));
+       ?>
+	</nav> 
+</header>

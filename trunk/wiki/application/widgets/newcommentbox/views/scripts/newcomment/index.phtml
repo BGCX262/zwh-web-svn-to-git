@@ -1,0 +1,23 @@
+<section class="J_TBox newcomment">	
+    <h3 class="hd">最新评论</h3>
+    <section class="bd">
+       <ul class="item_list">
+       <?php if($this->data):?>
+       		<?php foreach($this->data as $data):?>
+       			<?php $comment=mb_substr(strip_tags($data['content']),0,15,'utf-8');?>
+       			<?php if($comment):?>
+       			<li class="clfix">
+       			<img  width="40px" height="40px" src="<?php echo $data['photo'];?>" />
+       			<p>
+       			<?php echo $data['commenter'].":";?><br/>
+       			<a href="<?php echo '/'.BLOGGER_NAME.'/article/detail/id/'.$data['id'];?>" title="<?php echo $data['title']?>" ><?php echo $comment;?></a>
+       			</p>
+       			</li>
+       			<?php endif;?>
+       		<?php endforeach;?>
+       	<?php else :?>
+       		<li style='text-align:center;padding: 5px 0;'><span>暂无任何评论！</span></li>
+       	<?php endif;?>
+       </ul>
+    </section>
+</section>

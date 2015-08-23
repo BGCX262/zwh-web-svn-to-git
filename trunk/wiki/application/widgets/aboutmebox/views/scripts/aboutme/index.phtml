@@ -1,0 +1,21 @@
+<section class="J_TBox aboutme">	
+    <h3 class="hd">个人资料</h3>
+    <section class="bd">
+        <section class="userface">
+            <a href="<?php echo '/'.BLOGGER_NAME;?>" target="_blank">
+            <img src="<?php echo $this->data['photo'];?>" title="访问我的博客" />
+            </a>
+            <br>
+            <span><?php echo $this->data['nickname'];?></span>
+        </section>
+        <ul class="rank">
+            <li>访问：<span><?php echo $this->data['totalview'];?>次</span></li>
+        </ul>
+        <ul class="statistics clfix">
+            <li>原创：<span><?php echo $this->data['totalori'];?>篇</span></li>
+            <li>转载：<span><?php echo $this->data['totalresp'];?>篇</span></li>
+            <li>译文：<span><?php echo $this->data['totaltrans'];?>篇</span></li>
+            <li>评论：<span><?php echo $this->data['totalcom']?>条</span></li>
+        </ul>
+    </section>
+</section>

@@ -1,0 +1,103 @@
+<section class="check_user">
+	<h2>总用户量： <?php echo $this->totals;?></h2>
+	<table class="userlist">
+		<thead>
+			<tr>
+				<th class="th_id" style="width: 150px;">账户ID</th>
+				<th style="width: 250px;">账户名</th>
+				<th style="width: 250px;">文章总数</th>
+				<th style="width: 120px;">评论总数</th>
+				<th style="width: 208px;" class="handle">操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php if(count($this->paginator)):?>
+				<?php foreach ($this->paginator as $data):?>
+					<tr>
+				<td class="td_id"><?php echo $data['id']?></td>
+				<td><?php echo $data['nickname']?></td>
+				<td><?php echo $data['artnums']?></td>
+				<td><?php echo $data['comnums']?></td>
+				<td class="del"><a
+					href="<?php echo '/admin/del/id/'.$data['id'].'/nickname/'.$data['nickname'];?>"
+					title="删除用户">删除</a></td>
+			</tr>
+				<?php endforeach;?>
+				<tr>
+				<td colspan="5">
+				<?php
+				echo $this->paginationControl ( $this->data, 'Sliding', 'paginator/pagelist.phtml' );
+				?>
+				</td>
+			</tr>
+			<?php endif;?>
+		</tbody>
+	</table>
+</section>
+<?php
+$this->headLink ()->prependStylesheet ( '/lib/jquery-ui/development-bundle/themes/base/jquery.ui.all.css' ); //echo $this->headLink();
+?>
+<script type="text/javascript"
+	src="/lib/jquery-ui/js/jquery-ui-1.8.18.custom.min.js"></script>
+<script type="text/javascript">
+	function stopDefault( e ) {
+		 if ( e && e.preventDefault ){
+			 e.preventDefault();
+		 }else{
+		  	window.event.returnValue = false;
+		 	return false;
+		 }
+	}
+	//当页面加载完毕时添加一个隐藏的div
+	$(function(){
+	   var boardDiv = "<div id='message' style='display:none;'><span id='spanmessage'></span></div>";
+	   $(document.body).append(boardDiv);
+	  
+	});
+	//只是提示信息alert
+	   function message(text) {
+	       $("#spanmessage").text(text);
+	       $("#message").dialog({
+	           title:"温馨提示",
+	           modal: true,
+	           buttons: {
+	               "确定": function() {
+	                   $(this).dialog("close");
+	               }
+	           }
+	       });
+	   }
+	   //类似于confirm的功能
+	   //说明callback是如果要选择是，要执行的方法
+	   function queren(text, callback) {
+	       $("#spanmessage").text(text);
+	       $("#message").dialog({
+	           title: "温馨提示",
+	           modal: true,
+	           resizable: false,
+	           buttons: {
+	               "否": function() {
+	                   $(this).dialog("close");
+	               },
+	               "是": function() {
+	                   callback.call();//方法回调
+	                   $(this).dialog("close");
+	               }
+	           }
+	       });
+	   } 
+	   $(".check_user .del a").click(function(event) {
+	      stopDefault(event);  //阻止浏览器默认行为
+	       var domElem = this;
+	       var url = $(this).attr("href");
+           queren("确认要永久删除该用户吗？", function() {
+        	   $.get(url,{ajax:'1'},function(data) {
+                  if (data >=1) {
+                	  $(domElem).parent().parent().remove();
+                      message("删除成功！");
+                   }
+               }); 
+                 	
+           });
+       });
+	</script>

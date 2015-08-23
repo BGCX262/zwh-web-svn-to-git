@@ -1,0 +1,13 @@
+<table class='navs' cellpadding='0' cellspacing='0'> 
+<?php if($this->menus != null) :?> 
+    <tr> 
+        <th class="th_link" style='width:500px'>操作</th> 
+        <th style='width:478px'>导航名</th> 
+    </tr> 
+    <?php echo $this->partialLoop('partials/menuRow.phtml', $this->menus); ?> 
+<?php else: ?> 
+<tr><td class="notice" colspan="2">您还没有任何导航呢！</td></tr> 
+<?php endif;?> 
+<tr><td colspan="2" class="add_nav"><a href='/menu/create'>新建一个导航栏目</a></td></tr>
+</table>  
+ 

@@ -1,0 +1,46 @@
+<?php echo $this->doctype('HTML5'); ?>
+<html>
+	<head>
+	<?php
+	 	echo $this->headTitle("ui-wiki");
+	 	$this->baseUrl('http://www.cblog.com/'.BLOGGER_NAME);
+		echo $this->headMeta()->setCharset('utf-8');
+		$this->headLink()->prependStylesheet('/global/css/global.css')
+			 ->appendStylesheet('/global/css/main.css')
+			 ->headLink(array('rel' => 'shortcut icon',
+					 'href' => '/global/images/favicon.ico'),
+					 'PREPEND');
+	?>
+	<!--[if IE<=9]>  
+	<script src="/lib/html5.js"></script>  
+	<![endif]-->
+	<script type = "text/javascript"   src = "/lib/jquery-1.7.1.js" > </script >
+	<?php
+		echo $this->loadSkin($this->skin);
+		echo $this->headLink();
+	?>
+	</head>
+	<body>
+		<?php
+			//This is header 
+			echo $this->render("header.phtml");
+		?>
+		<section id="content" class="content">
+			<section id="main" class="main">
+				<?php 
+					//This is content
+					echo $this->layout()->content;
+				?>
+			</section>
+			<aside id="aside">
+				<?php 
+					echo $this->layout()->sidetwo;
+				?>
+			</aside>
+		</section>
+		<?php
+			//This is footer
+			echo $this->render("footer.phtml");
+		?>
+	</body>
+</html>

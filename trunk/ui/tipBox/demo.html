@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Tip Box Demo</title>
+	<link rel="stylesheet" href="TipBox.css">
+	<script src="TipBox.js"></script>
+	<style>
+		body{
+			font: 14px/1.5 "Microsolf YaHei","微软雅黑";
+			color: #000;
+		}
+		.demo{
+			margin: 50px 0 0 300px;
+		}
+	</style>
+</head>
+<body>
+	<div class="demo">
+		<span id="name_tip" class='name_tip Widget_Tipbox'></span>
+	</div>
+
+	<script>
+	window.onload = function(){
+		new UI.TipBox({id:'name_tip',width:180,height:50,align:'left',content:'只能输入数字，英文字母，符号'});
+	}	
+	</script>
+</body>
+</html>

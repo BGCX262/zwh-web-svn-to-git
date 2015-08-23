@@ -1,0 +1,95 @@
+<div class="article_manage">
+	<div class="article_list">
+<?php if(count($this->paginator)):?>
+	<?php foreach($this->paginator as $key=>$article):?>
+		<div class="list_item">
+			<div class="title <?php echo $article['atype']?>"><h2><a href="<?php echo "/".BLOGGER_NAME."/article/detail/id/".$article['id']."/key/".$this->keywords?>"><?php echo $article['title'];?></a></h2></div>
+			<div class="description"><?php echo str_replace(array('&nbsp;',' '), array('',''), strip_tags($article['summary']));?>...</div>
+			<div class="manage clfix">
+			    <span class="postdate"><?php echo $article['add_time']?></span>
+			    <span class="view" title="阅读次数"><a href='<?php echo "/".BLOGGER_NAME."/article/detail/id/".$article['id']?>' title="阅读次数">阅读</a>(<?php echo $article['view_counter']?>)</span>
+			    <span class="comments" title="评论次数"><a href="<?php echo "/".BLOGGER_NAME."/article/detail/id/".$article['id']."#look_comment";?>" title="评论次数">评论</a>(<?php if(isset($this->comment[$article['id']])){echo $this->comment[$article['id']];}else{ echo 0;}?>)</span>
+			    
+			    <?php if($this->show):?>
+			    <span class="edit"><a href='<?php echo "/".BLOGGER_NAME."/post/edit/id/".$article['id'];?>' title="编辑">编辑</a></span>
+			    <span class="delete"><a href="<?php echo "/".BLOGGER_NAME."/article/delete/id/".$article['id'];?>" title="删除">删除</a></span>
+			    <?php endif;?>
+			</div>
+		</div>
+	<?php endforeach;?>
+	<?php  
+		echo $this->paginationControl($this->articledata, 'Sliding',  'paginator/pagelist.phtml');  
+	?> 
+<?php else: ?>
+  <h1>抱歉， 没有找到相关的文章！</h1>
+<?php endif;?>
+	</div>
+</div>
+<?php if($this->show): ?>
+	<?php
+		$this->headLink()->prependStylesheet('/lib/jquery-ui/development-bundle/themes/base/jquery.ui.all.css');	//echo $this->headLink();
+	?>
+	<script type="text/javascript" src="/lib/jquery-ui/js/jquery-ui-1.8.18.custom.min.js"></script>
+	<script type="text/javascript">
+		function stopDefault( e ) {
+			 if ( e && e.preventDefault ){
+				 e.preventDefault();
+			 }else{
+			  	window.event.returnValue = false;
+			 	return false;
+			 }
+		}
+	//当页面加载完毕时添加一个隐藏的div
+	$(function(){
+	   var boardDiv = "<div id='message' style='display:none;'><span id='spanmessage'></span></div>";
+	   $(document.body).append(boardDiv);
+	  
+	});
+	//只是提示信息alert
+	   function message(text) {
+	       $("#spanmessage").text(text);
+	       $("#message").dialog({
+	           title:"温馨提示",
+	           modal: true,
+	           buttons: {
+	               "确定": function() {
+	                   $(this).dialog("close");
+	               }
+	           }
+	       });
+	   }
+	   //类似于confirm的功能
+	   //说明callback是如果要选择是，要执行的方法
+	   function queren(text, callback) {
+	       $("#spanmessage").text(text);
+	       $("#message").dialog({
+	           title: "温馨提示",
+	           modal: true,
+	           resizable: false,
+	           buttons: {
+	               "否": function() {
+	                   $(this).dialog("close");
+	               },
+	               "是": function() {
+	                   callback.call();//方法回调
+	                   $(this).dialog("close");
+	               }
+	           }
+	       });
+	   } 
+	   $(".manage .delete a").click(function(event) {
+	      stopDefault(event);  //阻止浏览器默认行为
+	       var domElem = this;
+	       var url = $(this).attr("href");
+           queren("确认要永久删除这篇文章吗？", function() {
+        	   $.get(url,{ajax:'1'},function(data) { 
+                  if (data >=1) {
+                	  $(domElem).parent().parent().parent().remove();
+                      message("删除成功！");
+                   }
+               }); 
+                 	
+           });
+       });
+	</script>
+<?php endif;?>

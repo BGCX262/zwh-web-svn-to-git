@@ -1,0 +1,123 @@
+<section class="blogger_profile">
+	<form id="perfect_info" method="post" action="/register/index"
+		encType="multipart/form-data">
+		<table>
+			<tbody>
+				<tr>
+					<td valign="top" class="right"><dfn>*</dfn>项目名称：</td>
+					<td>		
+						<input type="text" value="" name="name" maxlength="30"
+							class="inputbox" id="name">
+					</td>
+					<td><span class="field_notice">只能包含英文字母</span></td>
+				</tr>
+				<tr>
+					<td width="150" valign="top" class="right"><dfn>*</dfn>密码：</td>
+					<td><input type="password" name="pwd" maxlength="30"
+						class="inputbox" id="pwd"></td>
+					<td><span class="field_notice">不能小于六个字符</span></td>
+				</tr>
+				<tr>
+					<td width="150" valign="top" class="right"><dfn>*</dfn>再次输入密码：</td>
+					<td><input type="password" name="confirmpwd" maxlength="30"
+						class="inputbox" id="confirmpwd"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td valign="top" class="right"><dfn>*</dfn>邮箱：</td>
+					<td><input type="text" name="mail" id="mail" maxlength="50"
+						class="inputbox"></td>
+					<td><span class="field_notice">重要： 用来密码找回</span></td>
+				</tr>
+				<tr>
+					<td valign="top" class="right"></td>
+					<td class="padding"><input type="submit" class="submit" value="注册" /></td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+</section>
+<script type="text/javascript"
+	src="/lib/jquery.plugins/jquery.validate.js"></script>
+<script type="text/javascript">
+jQuery.validator.addMethod("isLeterrDigital", function(value, element) { 
+	var tel = /[^a-zA-Z0-9]$/; 
+	return this.optional(element) || (!tel.test(value));
+	}, "账户名只能包含英文字母和数字");
+$(function(){
+    $('#perfect_info').validate({
+        errorPlacement: function(error, element){
+        	var error_td = element.parents('td').next('td');
+            error_td.find('.field_notice').hide();
+            error_td.append(error);
+        },
+        success       : function(label){
+            label.addClass('validate_right').text('OK!');
+        },
+        submitHandler:function(form){
+				var url = '/register/index';
+				$.post(url,
+					   {ajax:'1',name:$("#name").val(),pwd:$("#pwd").val(),email:$("#mail").val()},
+					   function(data){
+						   var obj = jQuery.parseJSON(data);
+						   if(obj.status=="ok"){
+							   alert("恭喜您，注册成功！");
+							   window.location = "/"+obj.name+'/user/login';
+						   }else{
+							   alert("系统出错，请您稍后再试！");
+						   }
+					   });	
+				return false;
+				
+        },   
+        onkeyup: false,
+        rules : {
+            name : {
+                required : true,
+                isLeterrDigital : true,
+                remote   : {
+                    url :'/register/checknick/ajax/1',
+                    type:'get',
+                    data:{
+                        nickname : function(){
+                            return $("#name").val();
+                        }
+                    },
+                },
+            },
+            pwd : {
+                required : true,
+                minlength: 6,
+                maxlength: 50,
+            },
+            confirmpwd : {
+                required : true,
+                equalTo  : '#pwd',
+            },
+            mail : {
+                required : true,
+                email    : true,
+            },
+        },
+        messages : {
+	       	 name : {
+	             required : "项目名不能为空",
+	             remote : '对不起，该项目名已被创建',
+	         },
+        	 pwd  : {
+                required : '密码不能为空',
+                minlength: '密码至少为六位',
+                maxlength: '密码太长了',
+             },
+             confirmpwd : {
+            	required : '请再次输入密码',
+            	equalTo : '两次密码输入不一致',
+             },
+            mail : {
+            	required : '箱账号不能为空',
+           	 	email	 : "请输入一个有效的电子邮箱地址",
+            },
+        }
+    });
+});
+</script>

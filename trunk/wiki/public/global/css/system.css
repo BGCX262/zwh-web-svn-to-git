@@ -1,0 +1,87 @@
+@CHARSET "UTF-8";
+body {
+    background-color: #FFF;
+}
+footer .copyright {
+    border: none;
+    border-top: 1px solid #CCC;
+    background-color: #FFF;
+}
+/*
+ * 注册页面
+ */
+.blogger_profile {
+   background: url(/global/images/three_leaves.jpg) 650px center no-repeat;
+   padding-bottom: 60px;
+}
+.blogger_profile table tr td.right {
+    padding-top: 6px;
+    text-align: right;
+}
+.blogger_profile table tr td {
+    height: 18px;
+    line-height: 18px;
+    padding: 5px 3px;
+    text-align: left;
+}
+.blogger_profile table tr td dfn {
+    color: #FF0000;
+    font-style: normal;
+    padding-right: 5px;
+}
+.blogger_profile .inputbox {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CACACA;
+    color: #333333;
+    display: inline;
+    float: left;
+    height: 18px;
+    line-height: 18px;
+    margin-right: 5px;
+    padding: 3px;
+    width: 250px;
+}
+.blogger_profile .user {
+    padding: 30px 60px 20px;
+    margin: 0 auto;
+}
+.input-file {
+    overflow: hidden;
+    position: relative;
+    background: url("/global/images/bg.png") repeat scroll 0 -349px transparent;
+    color: #FFFFFF;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    width: 87px;
+    display: inline-block;
+    margin-left: 15px;
+}
+.input-file input {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    font-size: 100px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+.blogger_profile .submit {
+    background: url("/global/images/regist_btn.gif") no-repeat 0 0;
+    color: #FFFFFF;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    width: 86px;
+    display: inline-block;
+    border: none;
+    margin: 15px 0 0 0;
+    cursor: pointer;
+    font-weight: 600;
+}
+.error{
+    color: red;
+}
+.validate_right{
+    color : #2C0;
+}

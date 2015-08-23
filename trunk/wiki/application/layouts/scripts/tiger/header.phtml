@@ -1,0 +1,26 @@
+<header class="back_header">
+	<nav id="menu">  
+	    <ul class="home">
+	        <li><a href="<?php echo '/tiger/index';?>" title="用户管理">用户管理</a></li>
+	    </ul>
+	    <ul class="navigation">
+	    	<li><a href="<?php echo '/menu/index';?>" title="导航管理">导航管理</a></li>
+	    	<li><a href="<?php echo '/tiger/webset';?>" title="导航管理">博客设置</a></li>
+	    </ul>
+	</nav>
+	<aside class="help_nav">
+		<?php 
+			$user = new Zend_Session_Namespace('user');
+			//echo $user->nickname;
+			
+			if(!empty($user->nickname)&&$user->nickname=='admin'){
+				echo "<span style='color:red;'>".$user->nickname."</span> 欢迎您！|";
+			}
+		?>
+		<?php 
+			if(!empty($user->nickname)){
+				echo "<a href='/tiger/logout'>退出</a>";
+			}
+		?>
+	</aside>
+</header>

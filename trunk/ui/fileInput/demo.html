@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	body{
+		font-size: 12px;
+	}
+/* 证书导入	*/
+.cmn_form{
+	width:640px;
+	position:relative;
+	top:40px;
+}
+.cmn_form a.cmn_button{
+	display: inline-block;
+	padding: 3px 10px;
+	color: #18395B;
+}
+.cmn_form a:hover{
+	color: #18395B;
+}
+.cmn_table{
+	width:640px;
+	position:relative;
+	top:70px;
+}
+.cmn_table tr th{
+	vertical-align: middle;
+	text-align:right;
+	height: 25px;
+}
+.cmn_table tr td{
+	font-size: 13px;
+	text-align:left;
+}
+.file-box,.file-box-fix{
+	position:relative;
+	width:640px;
+	zoom:1;
+}
+.file-box:after,.file-box-fix:after{
+	content:'\20';
+	clear: both;
+	display:block;
+}
+.file-box input,.file-box-fix input{
+	float: left;
+}
+.import_file_btn{
+	width:60px;
+	float: left;
+	height: 21px;
+	line-height: 19px;
+	margin-top: 1px;
+	border:1px solid red;
+}
+.file-box .import_tip,.file-box-fix .import_tip{
+	display:inline;
+	float: left;
+	width:100px;
+	height:23px;
+	line-height:23px;
+	text-align:right;
+	margin-right:3px;
+	font-weight: bold;
+}
+.file-box-fix .file_txt{
+	 height:18px;
+	 border:1px solid #cdcdcd; 
+	 width:165px;
+	 float:left;
+	 display: inline;
+	 margin-right:1px;
+	 background-color: #FFF;
+	 border-radius: 3px;
+}
+.file-box-fix .file_browse{
+	height: 23px;
+	width: 62px;
+	margin-right: 5px;
+}
+
+.file-box-fix .import_file{
+	position:absolute;
+	left:103px;
+	top:0;
+	width:230px; 
+	height:23px;
+	filter:alpha(opacity:0);
+	opacity: 0;
+}
+.file-box .import_file{
+	padding:2px 0;
+	margin-right: 5px;
+}
+</style>
+<script src="import_widget.js"></script>
+</head>
+<body>
+	<form class="cmn_form" action="/accounts/importLicence/" id="licence" method="post" enctype="multipart/form-data">
+    <div id="f1"></div>
+    <script>
+    	var f1 = document.getElementById('f1');
+    	new CreateInputFile(f1, '证书' ,'导入', 'check()')
+    </script>
+	</form>
+</body>
+</html>
+
+
+

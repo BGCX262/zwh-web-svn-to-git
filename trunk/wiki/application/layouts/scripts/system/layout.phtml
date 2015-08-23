@@ -1,0 +1,38 @@
+<?php echo $this->doctype('HTML5'); ?>
+<html>
+	<head>
+	<?php
+	 	echo $this->headTitle();
+		echo $this->headMeta()->setCharset('utf-8');
+		$this->headLink()->appendStylesheet('/global/css/global.css')
+			 ->appendStylesheet('/global/css/system.css')
+			 ->headLink(array('rel' => 'shortcut icon',
+					 'href' => '/global/images/favicon.ico'),
+					 'PREPEND');
+	?>
+	<!--[if IE]>  
+	<script src="/lib/html5.js"></script>  
+	<![endif]-->
+	<script type = "text/javascript"   src = "/lib/jquery-1.7.1.js" > </script >
+	<?php
+		echo $this->headLink();
+	?>
+	</head>
+	<body>
+		<?php
+			//This is header 
+			echo $this->render("header.phtml");
+		?>
+		<section id="content">
+			<?php 
+				//This is content
+				echo $this->layout()->content;
+				//echo $this->layout()->nav;
+			?>
+		</section>
+		<?php
+			//This is footer
+			echo $this->render("footer.phtml");
+		?>
+	</body>
+</html>

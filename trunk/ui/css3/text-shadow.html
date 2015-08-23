@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>font-face style</title>
+	<script type="text/javascript" src="../lib/jquery.js"></script>
+	<style type="text/css">
+		body{
+			font:13px/1.231 arial,helvetica,clean,sans-serif;
+		}
+		@font-face {
+	      font-family: 'fontello';
+	      src: url('fonts/fontello.eot');
+	      src: url('fonts/fontello.eot?#iefix') format('embedded-opentype'),
+	           url('fonts/fontello.woff') format('woff'),
+			   url('fonts/fontello.ttf') format('truetype'),
+			   url('fonts/fontello.svg#fontello') format('svg');
+	      font-weight: normal;
+	      font-style: normal;
+	   }
+	   .demo .phone{
+	   		position:relative;
+	   		color:#000000;
+	   		display:inline-block;
+	   		padding: 10px 10px 10px 50px;
+	   		height: 50px;
+	   		line-height: 50px;
+	   		background-color:#FF9A66;
+	   		text-align:left;
+	   		font-size: 35px;
+	   		text-shadow: 1px 1px 0 #FFB38C;
+	   }
+	   .demo .phone a{
+	   		color:#000;
+	   		cursor:pointer;
+	   		text-decoration:none;
+	   }
+	   .demo .phone .icon-mobile{
+	   		position:absolute;
+	   		top:10px;
+	   		left:18px;
+	   		speak: none;
+	   		text-align:left;
+	   		display:inline-block;
+	   		font-family: 'fontello';		
+	   		/* fix ie7 */
+	   		width: 1em;
+	   		*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x1f4f1;&nbsp;');
+	   		/* fix buttons height, for twitter bootstrap */
+  			/* line-height: 1em; */
+	   }
+	   .demo .phone .icon-mobile:before{		
+	   		content: '\1f4f1';   		
+	   }
+	   .demo .phone .txt{
+	   		display: none;
+	   }
+	</style>
+</head>
+<body>
+	<div class="demo">
+		<!-- b 与 i 的区别jquery show hide  性能问题
+		-->
+		<span class='phone'><a href='#'><b class='icon-mobile'></b><i class='txt'>Phone</i></a></span>
+	</div>
+	<script type="text/javascript">
+		var $i_elm = $('.demo .phone .txt');
+		var $phone_elm = $('.demo .phone');
+		// jquery hide('slow')动画导致元素上下抖动  利用元素的绝对定位可解决
+		//stop防止鼠标连续滑动，导致动画累加
+		$phone_elm.mouseenter(function(){
+			$i_elm.stop(true,true).show(500);
+		}).mouseleave(function(){
+			$i_elm.stop(true,true).hide(500);
+		});
+			
+		/*
+		var i_elm = $i_elm[0];
+		var phone_elm = $phone_elm[0];
+		phone_elm.onmouseenter = function(){
+		
+			i_elm.style.display = 'inline';
+		}
+		phone_elm.onmouseleave = function(){
+			i_elm.style.display = 'none';
+		}
+		*/	
+		
+	</script>
+</body>
+</html>

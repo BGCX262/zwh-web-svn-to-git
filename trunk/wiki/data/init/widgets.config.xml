@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<components>
+	<leftside>
+		<component>
+			<name>frlink</name>
+			<show>false</show>
+		</component>
+	</leftside>
+	<rightside>
+		<component>
+			<name>aboutme</name>
+			<show>false</show>
+		</component>
+		<component>
+			<name>calendar</name>
+			<show>false</show>
+		</component>
+		<component>
+			<name>newcomment</name>
+			<show>false</show>
+		</component>
+		<component>
+			<name>artcate</name>
+			<show>false</show>
+		</component>
+		<component>
+			<name>artcates</name>
+			<show>true</show>
+		</component>
+		<component>
+			<name>readrank</name>
+			<show>false</show>
+		</component>
+		<component>
+			<name>comrank</name>
+			<show>false</show>
+		</component>
+		<component>
+			<name>recoart</name>
+			<show>false</show>
+		</component>
+	</rightside>
+</components>

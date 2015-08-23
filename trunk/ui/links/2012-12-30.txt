@@ -1,0 +1,28 @@
+@2012-12-30 Add
+
+http://www.webjx.com/javascript/jsajax-33332.html
+
+腾讯 神飞
+http://labs.qianduan.net
+
+px em区别和使用    设置浏览器的字体会影响布局  
+http://www.w3cplus.com/css/px-to-em
+http://www.aa25.cn/div_css/534.shtml
+
+rem //针对根元素 设置字体大小   不支持ie6-ie8
+http://www.w3cplus.com/css3/define-font-size-with-css3-rem
+
+css参考手册
+http://css.doyoe.com/
+
+css选择器 浏览器支持表
+http://labs.qianduan.net/css-selector/
+
+web字体兼容表
+http://www.cnblogs.com/lhb25/archive/2011/02/10/1950473.html
+
+emmet cheat-sheet
+http://docs.emmet.io/cheat-sheet/
+
+emmet api
+http://docs.emmet.io/

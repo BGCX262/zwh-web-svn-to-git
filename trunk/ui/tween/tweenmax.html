@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>GreenSock: TimelineLite Syntax</title>
+ 
+<style>
+body{
+    background-color:#000;
+}
+#demo {
+    width: 692px;
+    height: 70px;
+    background-color: #333;
+    padding: 8px;
+}
+#demoBackground{
+    position:absolute;
+    background-color:#000;
+    overflow:hidden;
+    width:692px;
+    height:70px;
+    visibility:hidden;
+}   
+#logo{
+    position:absolute;
+    background: url(img/logo_black.jpg) no-repeat;
+    height: 60px;
+    width: 60px;
+    top:6px;
+}
+#timelinelite{
+    position:absolute;
+    background-color: #DDD;
+    left:50px;
+    top:16px;
+    width: 180px;
+    height: 33px;
+    overflow:hidden;
+}   
+#tagline{
+    position:absolute;   
+    left:236px;
+    top:24px;
+    width:306px;
+    height:26px;
+}       
+#tagline span{
+    position:relative;
+    display:inline-block;
+	color: #FFF;
+}
+</style>
+</head>
+ 
+<body>
+<div id="demo">
+    <div id="demoBackground">
+        <div id="logo"></div>
+        <div id="timelinelite"></div>
+        <div id="tagline"><span>I</span><span>Can</span><span>See</span><span>The</span><span>Song</span>
+        </div>
+    </div>
+</div>
+<input type="button" id="restartBtn" value="restart()">
+ 
+<script type="text/javascript" src="../lib/greensock/TweenMax.js"></script>
+<script src="../lib/jquery.js"></script>
+ 
+<script>
+$(window).load(function() {
+    var logo = $("#logo"),
+        timelineLite = $("#timelinelite"),
+        tagline = $("#tagline span"),
+        restartBtn = $("#restartBtn"),
+        tl = new TimelineLite();
+             
+        tl.from(logo, 0.5, {css:{left:"-=60px"}, ease:Back.easeOut})
+          .from(timelinelite, 0.5, {css:{width:"0px", alpha:0}}, -0.02)
+          .staggerFrom(tagline, 0.5, {css:{top:"-=30px", rotation:"-40deg", alpha:0, scale:1.8}, ease:Back.easeOut}, 0.2);
+         
+    restartBtn.click(function() {
+        tl.restart();
+    });
+     
+    //show the demoBackground div after DOM is ready and all images loaded
+    TweenLite.set($("#demoBackground"), {css:{visibility:"visible"}});
+});
+ 
+</script>
+ 
+</body>
+</html>

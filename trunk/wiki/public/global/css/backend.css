@@ -1,0 +1,192 @@
+@CHARSET "UTF-8";
+#top_nav {
+    border: none;
+}
+#top_nav .help_nav {
+    margin-top: 5px;
+}
+.back_header {
+    background: url(/global/images/backend_nav.gif) repeat-x 0 0;
+    height: 90px;
+}
+#menu {
+    width: 980px;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+#menu ul {
+    display: inline;
+}
+#menu ul li {
+    display: inline;
+}
+#menu ul.home {
+    margin-left: 15px;
+}
+#menu ul.home a {
+    font-size: 20px;
+    color: #4F9B43;
+    text-decoration: none;
+}
+#menu ul.navigation {
+    margin-left: 50px;
+    position: relative;
+    top: -3px;
+}
+#menu ul.navigation li {
+    padding: 0 10px;
+    border-right: 1px solid #E2E2E2;
+}
+#menu ul.navigation li a {
+    color: #333;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+#menu ul.navigation li a:hover {
+    color: #7DAF4F;
+}
+#menu ul.navigation li a:active {
+    color: #CC3366;
+}
+/*
+ * blogger_profile
+ */
+.blogger_profile table tr td.right {
+    padding-top: 6px;
+    text-align: right;
+}
+.blogger_profile table tr td {
+    height: 18px;
+    line-height: 18px;
+    padding: 5px 3px;
+    text-align: left;
+}
+.blogger_profile table tr td dfn {
+    color: #FF0000;
+    font-style: normal;
+    padding-right: 5px;
+}
+.blogger_profile .inputbox {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CACACA;
+    color: #333333;
+    display: inline;
+    float: left;
+    height: 18px;
+    line-height: 18px;
+    margin-right: 5px;
+    padding: 3px;
+    width: 250px;
+}
+.blogger_profile .user {
+    padding: 30px 60px 20px;
+    margin: 0 auto;
+}
+.input-file {
+    overflow: hidden;
+    position: relative;
+    background: url("/global/images/bg.png") repeat scroll 0 -349px transparent;
+    color: #FFFFFF;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    width: 87px;
+    display: inline-block;
+    margin-left: 15px;
+}
+.input-file input {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    font-size: 100px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+.blogger_profile .user .submit {
+    background: url("/global/images/bg.png") repeat 0 -325px transparent;
+    color: #FFFFFF;
+    height: 25px;
+    line-height: 20px;
+    text-align: center;
+    width: 87px;
+    display: inline-block;
+    border: none;
+    position: relative;
+    top: -5px;
+	*top: 5px;
+    cursor: pointer;
+}
+.blogger_profile .user div.left {
+    float: left;
+    margin: 0;
+    width: 260px;
+}
+.blogger_profile .user_btm {
+    overflow: hidden;
+    padding: 0 60px 30px;
+    width: auto;
+}
+.blogger_profile .user_btm ul {
+    background-color: #F3F3F3;
+    border-top: 1px solid #D2D2D2;
+    color: #666666;
+    font-size: 12px;
+    padding: 30px;
+}
+.blogger_profile .user_btn{
+    padding: 5px 60px 30px;
+    width: auto;
+}
+.blogger_profile .user_btn .save_btn{
+    background: url("/global/images/bg.png") repeat scroll 0 -349px transparent;
+    color: #FFFFFF;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    width: 87px;
+    display: inline-block;
+    border: none;
+    position: relative;
+    top: -5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.blogger_profile .img_wrapper{
+    width: 220px;
+    height: 220px;
+    display:table-cell;
+    text-align: center;
+     vertical-align:middle;
+}
+.blogger_profile .img_wrapper img{
+    display:inline;
+    vertical-align: middle;
+}
+/*
+ *friendlink
+ */
+.friendlink{
+    border: 1px solid #DDD;
+}
+.friendlink th{
+    text-align :left;
+    height: 30px;
+    background-color: #FFFAFA;
+}
+.friendlink th.handle{
+    text-indent: 60px;
+}
+.friendlink td.handle{
+    text-indent: 5px;
+}
+.friendlink td.handle a{
+   color: #0196E3;
+}
+.friendlink td{
+    height: 25px;
+}
+.friendlink td.add_link{
+    text-indent: 5px;
+}

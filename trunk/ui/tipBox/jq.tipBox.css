@@ -1,0 +1,101 @@
+/* TipBox css ---start---*/
+.JQ_Widget .tip_box{
+	-webkit-border-radius: 12px;
+	border-radius: 5px;
+	border: 1px solid #7A7A7A;
+	font-size: 12px;
+	display: inline-block;
+	background-color: #fff;
+	
+}
+.JQ_Widget .tip_box .tip_title{
+	height: 14px;
+	position: relative;
+}
+.JQ_Widget .tip_box .tip_title a.tip_close{
+	position: absolute;
+	right: 3px;
+	top: 0;
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	line-height: 12px;
+	font-size: 12px;
+	color: #000;
+	font-family: "Microsolf YaHei","微软雅黑";
+	color: #444;
+	font-weight: bold;
+	text-align: center;
+	vertical-align: top;
+	text-decoration: none;	
+	outline: none;
+		
+}
+.JQ_Widget .tip_box .tip_title a.tip_close:hover{
+	color: #4c8bf7;
+}
+.JQ_Widget .tip_box .tip_content{
+	padding: 0 3px 3px 3px;
+	font-family: "Microsolf YaHei","微软雅黑";
+	font-size: 12px;
+	line-height: 1.2;
+	color: #000;
+}
+.JQ_Widget .tip_box b{
+	width: 0;
+	height: 0;
+	display: block;
+	text-align: left;
+	border: 5px solid transparent;
+}
+.JQ_Widget .tip_box_right{
+	left: 23px;
+	top: -8px;
+	-webkit-box-shadow: 1px 1px 3px #999;
+	box-shadow: 1px 1px 3px #999;
+}
+
+.JQ_Widget .tip_box_right .arrow{
+	position: absolute;
+	display: inline-block;
+	left: -10px;
+	top: 13px;
+	zoom:1;
+	text-align: left;
+
+}
+.JQ_Widget .tip_box_right .arrow_in{
+	position: absolute;
+	left: 2px;
+	border-right-color:#FFF;
+}
+.JQ_Widget .tip_box_right .arrow_out{
+	left: 0px;
+	position: absolute;
+	border-right-color:#7A7A7A;
+}
+.JQ_Widget .tip_box_left{
+	top: -8px;
+	right: 27px;
+	-webkit-box-shadow: -1px 1px 3px #999;
+	box-shadow: -1px 1px 3px #999;
+}
+.JQ_Widget .tip_box_left .arrow{
+	position: absolute;
+	display: inline-block;
+	right: -10px;
+	top: 13px;
+	zoom:1;
+	text-align: left;
+}
+.JQ_Widget .tip_box_left .arrow_in{
+	position: absolute;
+	right:2px;
+	border-left-color:#FFF;
+}
+.JQ_Widget .tip_box_left .arrow_out{
+	position: absolute;
+	right:0;
+	border-left-color:#7A7A7A;
+}
+/* TipBox css ---end---*/

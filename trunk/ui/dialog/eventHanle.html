@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>event handle</title>
+	<script>
+		function elContains(a,b){
+			return a.contains ? a!=b && a.contains(b) : !!(a.cmpareDocumentPosition(b) & 16) 
+		}
+		function withoutChildFunction(func){
+			/*
+			return function(e){
+				alert('widh')
+				var parent=e.relatedTarget;//上一响应mouseover/mouseout事件的元素
+				while(parent!=this&&parent){//假如存在这个元素并且这个元素不等于目标元素（被赋予mouseenter事件的元素）
+					try{
+						parent=parent.parentNode;}//上一响应的元素开始往上寻找目标元素
+					catch(e){
+						break;
+					}
+		 
+				}
+				if(parent!=this)//以mouseenter为例，假如找不到，表明当前事件触发点不在目标元素内
+				func(e);//运行目标方法，否则不运行
+			}
+			*/
+			return function(e){
+				var a = e.currentTarget, b = e.relatedTarget; 
+				if(!elContains(a, b) && a!=b){
+					func.call(e.currentTarget,e);
+				} 	
+			}
+			
+			
+		}
+		function addEvent(obj,evtype,fn,useCapture) {  
+	        if (obj.addEventListener) {//优先考虑W3C事件注册方案
+	        	
+	        	if(evtype === "mouseenter"){
+
+	        		obj.addEventListener('mouseover',withoutChildFunction(fn),!!useCapture);
+	        	} else if(evtype === "mouseleave"){
+	        		obj.addEventListener('mouseout',withoutChildFunction(fn),!!useCapture);
+	        	}else{
+	        		 obj.addEventListener(evtype,fn,!!useCapture);  
+	        	}
+	           
+	        } else {//当不支持addEventListener时(IE),由于IE同时也不支持捕获,所以不如使用传统事件绑定  
+	            if (!fn.__EventID) {fn.__EventID = addEvent.__EventHandlesCounter++;}  
+	            //为每个事件处理函数分配一个唯一的ID  
+	              
+	            if (!obj.__EventHandles) {obj.__EventHandles={};}  
+	            //__EventHandles属性用来保存所有事件处理函数的引用  
+	              
+	            //按事件类型分类  
+	            if (!obj.__EventHandles[evtype]) {//第一次注册某事件时  
+	                obj.__EventHandles[evtype]={};  
+	                if (obj["on"+evtype]) {//以前曾用传统方式注册过事件处理函数  
+	                    (obj.__EventHandles[evtype][0]=obj["on"+evtype]).__EventID=0;//添加到预留的0位  
+	                    //并且给原来的事件处理函数增加一个ID
+	                }  
+	            }
+	            
+	            obj.__EventHandles[evtype][fn.__EventID] = fn;
+	            obj["on"+evtype]=addEvent.execEventHandles;  
+	                //当事件发生时，execEventHandles遍历表obj.__EventHandles[evtype]并执行其中的函数  
+	        }  
+	    }  
+	    addEvent.__EventHandlesCounter=1;//计数器,0位预留它用  
+	    addEvent.execEventHandles = function (evt) {//遍历所有的事件处理函数并执行  
+	        if (!this.__EventHandles) {return true;}  
+	        evt = evt || window.event;  
+	        var fns = this.__EventHandles[evt.type];  
+	        var i;
+	        for (i in fns) {  
+	                fns[i].call(this);  
+	        }  
+	    };  
+	    function delEvent(obj,evtype,fn,useCapture) {  
+	        if (obj.removeEventListener) {//先使用W3C的方法移除事件处理函数  
+	            obj.removeEventListener(evtype,fn,!!useCapture);  
+	        } else {  
+	            if (obj.__EventHandles) {  
+	                var fns = obj.__EventHandles[evtype];  
+	                if (fns) {delete fns[fn.__EventID];}  
+	            }  
+	        }  
+	    }  
+	</script>
+	<style>
+		.box{
+			width: 30px;
+			height: 30px;
+			border: 1px solid #EEE;
+			background-color: #f00;
+			position: relative;
+		}
+		.box1{
+			width: 30px;
+			height: 100px;
+			position: absolute;
+			top: 30px;
+			left: 0;
+			background-color: #417cea;
+			word-wrap: break-word;
+		}
+	</style>
+</head>
+<body>
+	<div id="demo" onclick="fn1()">click me test event 
+		http://niutuku.com/tech/javaScript/258705.shtml
+		http://xiebiji.com/2010/02/js_mouseenter_mouseleave/?wptheme=Plainscape&ie=1
+		http://blog.csdn.net/encienqi/article/details/6196571
+		http://blog.163.com/liangge_sky/blog/static/21050018820113288726139/
+	</div>
+	<div class="box" id="box">
+		<div class="box1" id="box1" style="display:none;">
+			box1 congratulation
+			http://niutuku.com/tech/javaScript/258705.shtml
+		</div>
+	</div>
+	<script>
+		var demo = document.getElementById("demo");
+		addEvent(demo, 'click', fn2);
+		addEvent(demo, 'click', fn3);
+		function fn1(){
+			alert(1)
+		};
+		function fn2(){
+			alert(2)
+		};
+		function fn3(){
+			alert(3)
+		};
+	    var box1 = document.getElementById('box1');
+	    function fn4(){
+	    	if(box1.style.display=="none"){
+	    		box1.style.display="";
+	    	}
+	    }
+	    function fn5(){
+	    	box1.style.display="none";
+	    }
+	    var box = document.getElementById('box');
+	    addEvent(box, 'mouseenter', fn4);
+	    addEvent(box, 'mouseleave', fn5);
+	</script>
+</body>
+</html>

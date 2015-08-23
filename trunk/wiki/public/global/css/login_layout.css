@@ -1,0 +1,127 @@
+@CHARSET "UTF-8";
+body{
+    background-color: #FFF;
+}
+footer .copyright{
+    border: none;
+    border-top: 1px solid #CCC;
+    background-color:#FFF;
+}
+
+.login_form{
+    font: 12px/1.5 Tahoma,Helvetica,Arial,'宋体',sans-serif;
+    height:  350px;
+    margin: 80px 0;
+    background: url(/global/images/notebook.jpg) no-repeat 0 0;
+}
+.login_form form{
+    background: url(/global/images/login.jpg) no-repeat 0 0;
+    width: 345px;
+    height: 247px;
+    float: right;
+    position: relative;
+    margin: 25px 20px 0 0;
+}
+.login_form form p{
+    margin-left: 40px;
+    margin-bottom: 15px; 
+}
+.login_form form p label{
+    color: #404040;
+    display: inline-block;
+    padding-right: 10px;
+    text-align: right;
+    width: 66px;
+}
+.login_form form .user{
+    margin-top :50px
+}
+.login_form form .user input,.login_form form .pwd input{
+    border: 1px solid #C8C8C8;
+    height: 18px;
+    line-height: 18px;
+    margin-right: 3px;
+    padding: 3px;
+    vertical-align: middle;
+    width: 180px;
+}
+.login_form form .login{
+    margin: 15px 5px 0 80px;
+    width: 97px;
+    height: 38px;
+    border: none;
+    cursor: pointer;
+    background: url(/global/images/login_btn.jpg) no-repeat 0 0;
+}
+.login_form form .login:hover{
+    background-position: 0 -38px;
+    color: #EEE;
+}
+.login_form form .btn a{
+    color: #333;
+    margin: 5px 0 0 5px;
+    
+}
+.login_form form .regist{
+    position: absolute;
+    bottom: 15px;
+    right:15px;
+}
+.login_form form .regist a{
+    color: #999;
+}
+/*
+ * find_form 密码找回
+ */
+.find_form{
+    font: 12px/1.5 Tahoma,Helvetica,Arial,'宋体',sans-serif;
+    height:  483px;
+    background: url(/global/images/branches.jpg) no-repeat 0 0;
+}
+.find_form form{
+    background: url(/global/images/get_pwd.jpg) no-repeat 0 0;
+    width: 345px;
+    height: 247px;
+    float: right;
+    position: relative;
+    margin: 175px 150px 0 0;
+}
+.find_form form p{
+    margin-left: 40px;
+    margin-bottom: 15px; 
+}
+.find_form form p label{
+    color: #404040;
+    display: inline-block;
+    padding-right: 10px;
+    text-align: right;
+    width: 66px;
+}
+.find_form form .user{
+    margin-top :50px
+}
+.find_form form .email_area input,.find_form form .user input{
+    border: 1px solid #C8C8C8;
+    height: 18px;
+    line-height: 18px;
+    margin-right: 3px;
+    padding: 3px;
+    vertical-align: middle;
+    width: 180px;
+}
+.find_form form .find{
+    margin: 15px 5px 0 80px;
+    width: 97px;
+    height: 38px;
+    border: none;
+    cursor: pointer;
+    background: url(/global/images/login_btn.jpg) no-repeat 0 0;
+}
+.find_form form .find:hover{
+    background-position: 0 -38px;
+    color: #EEE;
+}
+.find_form form .btn a{
+    color: #333;
+    margin: 5px 0 0 5px;    
+}

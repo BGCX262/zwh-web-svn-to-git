@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>menu</title>
+	<link rel="stylesheet" href="../base.css" />
+	<style type="text/css">
+		body{
+			background-color:#F6F8F8;
+		}
+		.menu{
+			width:960px;
+			height:42px;
+			background-color:#446cb3;
+			margin:50px auto;
+			zoom:1;
+		}
+		.menu:after{
+			color:'\20';
+			clear:both;
+			display:block;
+		}
+		.dropdown-menu{
+			display:none;
+		}
+		.menu-function{
+			float:left;
+		}
+		.menu-share{
+			float:right;
+		}
+		.menu > ul > li{
+			display:inline-block;
+		}
+		.menu > ul > li > a{
+			display:block;
+			width:100px;
+			height:42px;
+			padding: 0 5px;
+			line-height:42px;
+			color:#FFF;
+			text-align:center;
+		}
+		.menu > ul > li:hover > a{
+			color:#3d61a2;
+			background-color:#FFF;
+			text-decoration:none;
+			-webkit-animation-name: fadeOut;
+			-webkit-animation-duration: 0.5s;
+			animation-name: fadeOut;
+			animation-duration: 0.5s;
+		}
+		.menu > ul > li.ltr:hover .dropdown-menu{
+			display:block;
+			position:absolute;
+			left:0;
+			top:42px;
+		}
+		.menu > ul > li.share:hover .dropdown-menu{
+			display:block;
+			position:absolute;
+			right:0;
+			top:42px;
+		}
+		.menu > ul > li.share .dropdown-menu li a{
+			width:222px;
+			
+		}
+		ul.dropdown-menu > li > a{
+			display:block;
+			width: 217px;
+			height: 38px;
+			line-height:38px;
+			background-color:#FFF;
+			padding-left:5px;
+			
+		}
+		ul.dropdown-menu > li > a:hover{
+			color:#000;
+			text-decoration:none;
+			
+		}
+		.menu > ul > li{
+			position:relative;
+			float:left;
+		}
+		ul.menu-function > li {
+			border-right: 1px solid #3d61a2;
+		}
+		ul.menu-share > li {
+			border-left: 1px solid #3d61a2;
+		}
+		ul li{
+			padding:0;
+			margin:0;
+		}
+		@-webkit-keyframes fadeOut {
+			0% {background: rgba(255,255,255,0);}
+			100% {background: rgba(255,255,255,1);}
+		}
+		@keyframes fadeOut {
+			0% {background: rgba(255,255,255,0);}
+			100% {background: rgba(255,255,255,1);}
+		}
+	</style>
+</head>
+<body>
+	<div class="menu">
+		<ul class="menu-function">
+			<li class='ltr'>
+				<a href="#">CATEGORIES</a>
+				<ul class="dropdown-menu">
+					<li><a href="" title="">Design</a></li>
+			        <li><a href="" title="">Freebies</a></li>
+			        <li><a href="" title="">Tutorials</a></li>
+			        <li><a href="" title="">Coding</a></li>
+			        <li><a href="" title="">Inspiration</a></li>
+			        <li><a href="" title="">WordPress</a></li>
+			        <li><a href="" title="">Resources</a></li>
+				</ul>
+			</li>
+			<li><a href="#">SHOP</a></li>
+			<li><a href="#">SEARCH</a></li>
+		</ul>
+		<ul class="menu-share">
+		    <li class='ltr'>
+		      <a href="" title="">FOLLOW US</a>
+		      <ul class="dropdown-menu">
+		        <li><a href="" title="">RSS</a></li>
+		        <li><a href="" title="">Twitter</a></li>
+		        <li><a href="" title="">Facebook</a></li>
+		        <li><a href="" title="">Google+</a></li>
+		        <li><a href="" title="">Dribbble</a></li>
+		      </ul>
+		    </li>
+		    <li class='share'>
+		      <a href="" title="">SHARE</a>
+		      <ul class="dropdown-menu">
+		        <li><a href="" title="">Facebook</a></li>
+		        <li><a href="" title="">Twitter</a></li>
+		        <li><a href="" title="">Google+</a></li> 
+		      </ul>
+		    </li>
+		 </ul>	
+	</div>
+	<div class="box">
+	</div>
+	<script type="text/javascript" src="../../lib/greensock/plugins/CSSPlugin.js"></script>
+	<script type="text/javascript" src="../../lib/greensock/TweenLite.js"></script>
+	<script type="text/javascript" src="../../lib/jquery.js"></script>
+	
+	<script type="text/javascript">
+	
+		var $dropLi = $('.dropdown-menu > li');
+	
+		$dropLi.hover(function(event){
+		
+			TweenLite.to(event.target, 0.3, {css:{textIndent:"0.5em"}});
+		},function(event){
+			
+			TweenLite.to(event.target, 0.3, {css:{textIndent:"0"}});
+		});
+		
+		
+		
+	</script>
+	
+</body>
+</html>

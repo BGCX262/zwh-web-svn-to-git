@@ -1,0 +1,124 @@
+/* TipBox css ---start---*/
+@font-face {
+  font-family: 'icomoon';
+  src: url('fonts/icomoon.eot'); /* ie9 */
+  src: url('fonts/icomoon.eot?#iefix') format('embedded-opentype'), /* ie6-ie8 */
+      url('fonts/icomoon.woff') format('woff'), /* chrome6+ firefox3.6+ */
+	  url('fonts/icomoon.ttf') format('truetype'), /* chrome firefox opera safari android ios4.2+*/
+	  url('fonts/icomoon.svg#icomoon') format('svg'); /* ios4.1-*/
+}
+.Widget_Tipbox{
+	position: relative;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	color: #7A7A7A;
+	cursor: pointer;
+	font-size: 16px;
+	font-family: 'icomoon';
+	/* fix ie7 */
+	*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe001;&nbsp;');
+	z-index: 1;
+}
+.Widget_Tipbox:before{
+	content: '\e001';
+}
+.Widget_Tipbox .tip_box{
+	-webkit-border-radius: 12px;
+	border-radius: 5px;
+	behavior:url(PIE.htc);
+	border: 1px solid #7A7A7A;
+	font-size: 12px;
+	display: inline-block;
+	background-color: #fff;
+	
+}
+.Widget_Tipbox .tip_box .tip_title{
+	height: 14px;
+	position: relative;
+}
+.Widget_Tipbox .tip_box .tip_title a.tip_close{
+	position: absolute;
+	right: 3px;
+	top: 0;
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	line-height: 12px;
+	font-size: 12px;
+	color: #000;
+	font-family: "Microsolf YaHei","微软雅黑";
+	color: #444;
+	font-weight: bold;
+	text-align: center;
+	vertical-align: top;
+	text-decoration: none;	
+		
+}
+.Widget_Tipbox .tip_box .tip_content{
+	padding: 0 3px 3px 3px;
+	font-family: "Microsolf YaHei","微软雅黑";
+	font-size: 12px;
+	line-height: 1.2;
+	color: #000;
+}
+.Widget_Tipbox .tip_box b{
+	width: 0;
+	height: 0;
+	display: block;
+	text-align: left;
+	border: 5px solid transparent;
+}
+.Widget_Tipbox .tip_box_right{
+	left: 26px;
+	top: -10px;
+	-webkit-box-shadow: 1px 1px 3px #999;
+	box-shadow: 1px 1px 3px #999;
+	behavior:url(PIE.htc);
+}
+
+.Widget_Tipbox .tip_box_right .arrow{
+	position: absolute;
+	display: inline-block;
+	left: -10px;
+	top: 13px;
+	zoom:1;
+	text-align: left;
+
+}
+.Widget_Tipbox .tip_box_right .arrow_in{
+	position: absolute;
+	left: 2px;
+	border-right-color:#FFF;
+}
+.Widget_Tipbox .tip_box_right .arrow_out{
+	left: 0px;
+	position: absolute;
+	border-right-color:#7A7A7A;
+}
+.Widget_Tipbox .tip_box_left{
+	top: -10px;
+	right: 27px;
+	-webkit-box-shadow: -1px 1px 3px #999;
+	box-shadow: -1px 1px 3px #999;
+	behavior:url(PIE.htc);
+}
+.Widget_Tipbox .tip_box_left .arrow{
+	position: absolute;
+	display: inline-block;
+	right: -10px;
+	top: 13px;
+	zoom:1;
+	text-align: left;
+}
+.Widget_Tipbox .tip_box_left .arrow_in{
+	position: absolute;
+	right:2px;
+	border-left-color:#FFF;
+}
+.Widget_Tipbox .tip_box_left .arrow_out{
+	position: absolute;
+	right:0;
+	border-left-color:#7A7A7A;
+}
+/* TipBox css ---end---*/

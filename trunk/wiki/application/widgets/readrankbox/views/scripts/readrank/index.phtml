@@ -1,0 +1,16 @@
+<section class="J_TBox readrank">	
+    <h3 class="hd">阅读排行</h3>
+    <section class="bd">
+       <ul class="item_list">
+       <?php if($this->data):?>
+       		<?php foreach($this->data as $data):?>
+       			<li>       			
+       			   <a href="<?php echo '/'.BLOGGER_NAME.'/article/detail/id/'.$data['id'];?>" title="<?php echo $data['title']?>" ><?php echo $data['title'].' ('.$data['view_counter'].')';?></a>
+       			</li>
+       		<?php endforeach;?>
+       	<?php else :?>
+       		<li style='text-align:center;padding: 5px 0;'><span>您目前还没有发表文章呢！</span></li>
+       	<?php endif;?>
+       </ul>
+    </section>
+</section>

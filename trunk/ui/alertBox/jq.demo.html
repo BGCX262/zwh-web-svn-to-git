@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Tip Box Demo</title>
+	<script src="../lib/jquery.js"></script>
+	<script src="../lib/jq.alertBox.js"></script>
+	<style>
+		body{
+			font: 14px/1.5 "Microsolf YaHei","微软雅黑";
+			color: #000;
+		}
+		.demo{
+			margin: 50px 0 0 300px;
+		}
+		.alert{
+			overflow: hidden;
+		}
+	</style>
+	<script>
+		function getScrollWidth() {
+		    var noScroll, scroll, div = document.createElement("DIV");
+		    div.style.cssText = "background-color:red;position:absolute; top:-1000px; width:100px; height:100px; overflow:hidden;";
+		    noScroll = document.body.appendChild(div).clientWidth;
+		    div.style.overflowY = "scroll";
+		    scroll = div.clientWidth;
+		    document.body.removeChild(div);
+		    return noScroll - scroll;
+		}
+	</script>
+</head>
+<body class="body">
+	<div class="demo">
+		<span id="name_tip" class='name_tip Widget_Tipbox'></span>
+		<p>demo</p>
+		<p>demo</p>
+		<p>demo</p>
+		<p>demo</p>
+
+		<p>demo</p>
+		<p>demo</p>
+
+		<p>demo</p>
+		<p>demo</p>
+		<p>demo</p>
+		<p>demo</p>
+			<p>demo</p>
+		<p>demo</p>
+		<p>demo</p>
+		<p>demo</p>
+
+		<p>demo</p>
+		<p>demo</p>
+
+		<p>demo</p>
+		<p>demo</p>
+		<p>demo</p>
+		<p>demo</p>
+			<p>demo</p>
+		<p>demo</p>
+		<p>demo</p>
+		<p>demo</p>
+
+		<p>demo</p>
+		<p>demo</p>
+
+		<p>demo</p>
+		<p>demo</p>
+		<p>demo</p>
+		<p>demo</p>
+			<p>demo</p>
+		<p>demo</p>
+		<p>demo</p>
+		<p>demo</p>
+
+		<p>demo</p>
+		<p>demo</p>
+
+		<p>demo</p>
+		<p>demo</p>
+		<p>demo</p>
+		<p>demo</p>
+			<p>demo</p>
+		<p>demo</p>
+		<p>demo</p>
+		<p>demo</p>
+
+		<p>demo</p>
+		<p>demo</p>
+
+		<p>demo</p>
+		<p>demo</p>
+		<p>demo</p>
+		<p>demo</p>
+			<p>demo</p>
+		<p>demo</p>
+		<p>demo</p>
+		<p>demo</p>
+
+		<p>demo</p>
+		<p>demo</p>
+
+		<p>demo</p>
+		<p>demo</p>
+		<p>demo</p>
+		<p>demo</p>
+			<p>demo</p>
+		<p>demo</p>
+		<p>demo</p>
+		<p>demo</p>
+
+		<p>demo</p>
+		<p>demo</p>
+
+		<p>demo</p>
+		<p>demo</p>
+		<p>demo</p>
+		<p>demo</p>
+	</div>
+
+	<script>
+	window.onload = function(){
+		alert(123);
+	}	
+	</script>
+</body>
+</html>

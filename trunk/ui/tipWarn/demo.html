@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>TipWarn Demo</title>
+	<script src="TipWarn.js"></script>
+	<style>
+		body{
+			overflow-x: hidden;;
+		}
+		.tip_warn{
+			border: 1px solid #000;
+			zoom:1;
+		}
+		.tip_warn .warn_title{
+			background-color: #37a738;
+			height: 16px;
+			position: relative;
+		}
+		.tip_warn .warn_title .warn_close{
+			display: inline-block;
+			width: 16px;
+			height: 16px;
+			position: absolute;
+			right: 3px;
+			top :0;
+			background-color: #f00;
+		}
+		.tip_warn .warn_wrap{
+			background-color: #ea38be;
+			zoom:1;
+		}
+		.tip_warn .warn_wrap .warn_content{
+			height: 30px;
+			line-height: 30px;
+			padding-bottom: 10px;
+		}
+	</style>
+</head>
+<body>
+	<h1>TipWarn Demo Show</h1>
+	<button onclick="UI.TipWarn.show()">showWarn</button>
+	<button onclick="UI.TipWarn.hide()">hideWarn</button>
+	<script>
+		window.onload = function(){
+			UI.TipWarn.append({html:"<div class='warn_content'>warnning 1</div>"});	
+			UI.TipWarn.append({html:"<div class='warn_content'>warnning 2</div>",right:20});	
+			UI.TipWarn.show();
+		}
+	</script>
+</body>
+</html>

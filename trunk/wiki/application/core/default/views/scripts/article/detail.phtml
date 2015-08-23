@@ -1,0 +1,38 @@
+<?php 
+	echo $this->headScript(); 
+?>
+	<script type = "text/javascript"   src = "/lib/syntaxhighlighter/scripts/shCore.js" > </script >   
+	<script type = "text/javascript"   src = "/lib/syntaxhighlighter/scripts/shBrushes.js" ></script >
+	<script type= "text/javascript" >  
+		SyntaxHighlighter.config.clipboardSwf= '/lib/syntaxhighlighter/scripts/clipboard.swf'; 
+		SyntaxHighlighter.all();
+		SyntaxHighlighter.config.strings.viewSource = "查看代码";
+		SyntaxHighlighter.config.strings.copyToClipboard = "复制代码";
+		SyntaxHighlighter.config.strings.copyToClipboardConfirmation = "代码已复制到剪贴板上";
+		SyntaxHighlighter.config.strings.print = "打印";
+		SyntaxHighlighter.config.strings.help = "帮助";
+		SyntaxHighlighter.config.strings.alert = "操作小贴士:\n\n";
+	</script>
+<article class="article">
+	<section class="content">
+		<?php if($this->data): ?>
+			<?php foreach($this->data as $section): ?>
+				<?php if($section['content']):?>
+					<?php echo $section['content']; ?>
+					<aside class='edit'>
+					 	<a href="<?php echo '/'.BLOGGER_NAME.'/post/edit/id/'.$section['id'].'/pid/'.$this->pid;?>" title="修改内容" >修改</a>
+					 	<a href="<?php echo '/'.BLOGGER_NAME.'/article/delete/id/'.$section['id'].'/pid/'.$this->pid;?>" title="删除内容" >删除</a>
+						<span>发布时间: <?php echo $section['issue_time']; ?></span>
+					</aside>
+				<?php endif;?>
+			<?php endforeach;?>
+		<?php endif; ?>
+	</section>
+	<aside class="new_section">
+		<?php if($this->data): ?>
+			<a href="<?php echo '/'.BLOGGER_NAME.'/post/new/pid/'.$this->pid;?>" target="_self">补充内容</a>
+		<?php else: ?>
+			<span>您还有没有添加相关内容 </span><a href="<?php echo '/'.BLOGGER_NAME.'/post/new/pid/'.$this->pid;?>" target="_self">点此</a><span> 来添加一段文章吧</span>
+		<?php endif; ?>
+	</aside>
+</article>

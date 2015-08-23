@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>shake demo</title>
+	
+	<style type="text/css">
+		#demo{
+			width:50px;
+			height:50px;
+			margin: 30px auto;
+			background-color:#349df9;
+			position:absolute;
+			left:30px;
+			top:30px;
+		}
+		.box{
+			width:300px;
+			height:300px;
+			position:relative;
+			background-color:#ccbe28;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div id="demo"></div>
+	</div>
+	
+	<script type="text/javascript" src="../lib/jquery.js"></script>
+	<script type="text/javascript" src="../lib/greensock/TweenMax.js"></script>
+	<script type="text/javascript">
+		var $d = $('#demo');
+		var t = new TimelineMax({repeat:-1});
+		var flag = true;
+		$d.mouseenter(function(){
+			flag || t.restart()
+			t.to($d, 0.1, {css:{rotation:15}})
+			 .to($d, 0.1, {css:{rotation:-15}})
+			 .to($d, 0.1, {css:{rotation:0}});		
+		});
+		$d.mouseleave(function(){
+			t.pause();
+			flag = false;
+			//alert(t.pause())
+			TweenMax.to($d, 0.1, {css:{rotation:0}});
+			
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<section class="J_TBox comrank">	
+    <h3 class="hd">评论排行</h3>
+    <section class="bd">
+       <ul class="item_list">
+       <?php if($this->data):?>
+       		<?php foreach($this->data as $data):?>
+       			<li>       			
+       			   <a href="<?php echo '/'.BLOGGER_NAME.'/article/detail/id/'.$data['id'];?>" title="<?php echo $data['title']?>" ><?php echo $data['title'].' ('.$data['total'].')';?></a>
+       			</li>
+       		<?php endforeach;?>
+       	<?php else :?>
+       		<li style='text-align:center;padding: 5px 0;'><span>您的文章目前还没有任何评论！</span></li>
+       	<?php endif;?>
+       </ul>
+    </section>
+</section>

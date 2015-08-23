@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>mousemove test</title>
+</head>
+<style>
+	.demo{
+		width: 300px;
+		height: 300px;
+		margin-left: 50px;
+		background-color: #542349;
+	}
+</style>
+<body>
+	<div class="demo" id='demo'>
+		This is deom.
+	</div>
+	<div class="msg" id='msg'></div>
+	<script>
+		window.onload = function(){
+			var m = document.getElementById('msg');
+			var d = document.getElementById('demo');
+			d.onmousedown = function(e){
+				var e = e || window.event;
+				m.innerHTML += e.offsetX;
+			}
+		}
+	</script>
+</body>
+</html>

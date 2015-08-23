@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>font-face style</title>
+	<script type="text/javascript" src="../lib/jquery.js"></script>
+	<link rel="stylesheet" href="../lib/plugin/jquery.pseudo.js" />
+	<style type="text/css">
+		@font-face {
+	      font-family: 'fontello';
+	      src: url('fonts/fontello.eot'); /* ie9 */
+	      src: url('fonts/fontello.eot?#iefix') format('embedded-opentype'), /* ie6-ie8 */
+	          url('fonts/fontello.woff') format('woff'), /* chrome6+ firefox3.6+ */
+			  url('fonts/fontello.ttf') format('truetype'), /* chrome firefox opera safari android ios4.2+*/
+			  url('fonts/fontello.svg#fontello') format('svg'); /* ios4.1-*/
+	      font-weight: normal;
+	      font-style: normal;
+	   }
+	   .demo .phone{
+	   		display:inline-block;
+	   		width: 200px;
+	   		height: 100px;
+	   		line-height:100px;
+	   		background-color:#F96;
+	   		text-align:center;
+	   		font-size: 35px;
+	   		
+	   }
+	   .demo .phone .icon-mobile{
+	   		font-family: 'fontello';		
+	   		/* fix ie7 */
+	   		*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x1f4f1;&nbsp;');
+	   }
+	   .demo .phone .icon-mobile:before{		
+	   		content: '\1f4f1';   		
+	   }
+	   .demo .phone .txt{
+	   		margin-left: 0.5em;
+	   }
+	</style>
+</head>
+<body>
+	<div class="demo">
+		<span class='phone'><b class='icon-mobile'></b><i class='txt'>Phone</i></span>
+	</div>
+</body>
+</html>

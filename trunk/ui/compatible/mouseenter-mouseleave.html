@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		#parent{
+			background-color:#cd5c5c;
+			width: 100px;
+			height: 100px;
+		}
+		#child{
+			background-color:#28e2c0;
+			width:100px;
+			height:100px;
+		}
+		#msg{
+			width:300px;
+			
+			border:1px solid #EEE;
+		}
+	</style>
+</head>
+<body>
+	<div id="parent">
+		<div id="child"></div>
+	</div>
+	<div id="msg"></div>
+	<script type="text/javascript" src="../lib/jquery.js"></script>
+	<!--- The following scripts are necessary to do TweenLite tweens on CSS properties -->
+	<script type="text/javascript" src="../lib/greensock/plugins/CSSPlugin.js"></script>
+	<script type="text/javascript" src="../lib/greensock/TweenLite.js"></script>
+	<script type="text/javascript">
+		
+		/*
+		var p = document.getElementById('parent');
+		var c = document.getElementById('child');
+		var m = document.getElementById('msg');
+		p.onmouseover = function(){
+			m.innerHTML += 'parent div over <br/>';
+		}
+		c.onmouseover = function(){
+			m.innerHTML += 'child div over <br/>';
+		}
+		p.onmouseout = function(){
+			m.innerHTML += 'parent div out <br/>';
+		}
+		c.onmouseout = function(){
+			m.innerHTML += 'child div out <br/>';
+		}
+		*/
+		/*
+		if(! +'\v1'){
+			p.onmouseenter = function(){
+				m.innerHTML += 'parent div enter <br/>';
+			};
+			c.onmouseenter = function(){
+				m.innerHTML += 'child div enter <br/>';
+			};
+			p.onmouseleave = function(){
+				m.innerHTML += 'parent div leave <br/>';
+			};
+			c.onmouseleave = function(){
+				m.innerHTML += 'child div leave <br/>';
+			};
+			
+		}else{
+			p.onmouseover = function(e) {
+	            var t = e.relatedTarget;
+			　　　if(!t || (!(t.compareDocumentPosition(this) & 8) &&  t !== this)){
+			        // t有可能是不存在的, target在很边缘的情况下，从浏览器外部直接移入target的情况.
+			　　　　　　m.innerHTML += 'parent div enter <br/>';
+			　　　}
+		    };
+		    p.onmouseout = function(e) {
+		    	var t = e.relatedTarget;
+    	　　　　	if(!t || (!(t.compareDocumentPosition(this) & 8) &&  t !== this)){
+    	            // t有可能是不存在的, target在很边缘的情况下，从浏览器外部直接移入target的情况.
+    	　　　　	　	m.innerHTML += 'parent div leave <br/>';
+    	　　　　	}
+
+		    };
+		    c.onmouseover = function(e) {
+	            var t = e.relatedTarget;
+			　　　if(!t || (!(t.compareDocumentPosition(this) & 8) &&  t !== this)){
+			        // t有可能是不存在的, target在很边缘的情况下，从浏览器外部直接移入target的情况.
+			　　　　　　m.innerHTML += 'child div enter <br/>';
+			　　　}
+		    };
+		    c.onmouseout = function(e) {
+		    	var t = e.relatedTarget;
+    	　　　　	if(!t || (!(t.compareDocumentPosition(this) & 8) &&  t !== this)){
+    	            // t有可能是不存在的, target在很边缘的情况下，从浏览器外部直接移入target的情况.
+    	　　　　	　	m.innerHTML += 'child div leave <br/>';
+    	　　　　	}
+
+		    };
+		}
+		*/
+		var $p = $('#parent');
+		var $c = $('#child');
+		var $m = $('#msg');
+		
+		$p.mouseenter ( function(){
+			TweenLite.to($p, 0.3, {css:{width:"300px",height:"300px"}});
+			TweenLite.to($c, 0.2, {css:{width:"200px",height:"200px"}});
+		});
+		$p.mouseleave ( function(){
+			TweenLite.to($p, 0.5, {css:{width:"100px",height:"100px"}});
+			TweenLite.to($c, 0.3, {css:{width:"100px",height:"100px"}});
+		});
+	</script>
+</body>
+</html>

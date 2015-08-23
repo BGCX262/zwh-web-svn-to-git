@@ -1,0 +1,14 @@
+<table class="friendlink"> 
+<?php if($this->items != null) : ?> 
+    <tr> 
+        <th class="handle" style="width: 300px;">操作 </th> 
+        <th style="width: 200px;">名称</th>  
+        <th style="width: 478px;">链接地址</th> 
+    </tr> 
+    <?php echo $this->partialLoop('partials/memfriendLinkRow.phtml', 
+        $this->items); ?> 
+<?php else: ?> 
+<tr><td colspan="3">您还没有添加友情链接呢！</td></tr> 
+<?php endif;?> 
+<tr><td colspan="3" class="add_link"><a href='<?php echo '/'.BLOGGER_NAME;?>/memfriendlink/add'>添加友情链接</a></td></tr>
+</table>  

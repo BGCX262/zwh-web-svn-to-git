@@ -1,0 +1,30 @@
+Emmet 快捷键(Coda 2)
+
+学习 Emmet：缩写语法(abbreviation syntax) 和 可用的方法(actions)。
+
+Expand Abbreviation 扩展缩写 (Control+E)
+Wrap With Abbreviation 缩写包裹 (Control+A)
+Toggle Comment 注释开关 (Command + \)
+Previous Edit Point 前一个编辑点 (Control+左方向键)
+Next Edit Point 下一个编辑点 (Control+右方向键)
+Select Next Item 选择下一项 (Control+Shift+右方向键)
+Select Previous Item 选择前一项 (Control+Shift+左方向键)
+HTML
+Match Pair Tag(inward) 匹配标签对(向内)
+Match Pair Tag(outward) 匹配标签对(向外) (Control+Shift+D)
+Go To Matching Tag Pair 转到标签对
+Remove Tag 移除便签
+Split/Join Tag Declaration 分割/合并 便签声明 (Control+Shift+单引号)
+CSS
+Reflect Value 反射值 (Control+R)
+Nmbers
+Evaluate Math Expression 计算数学表达式 (Command+Y)
+Increment Number by 1 加1 (Control+上方向键)
+Decrement Number by 1 减1 (Control+下方向键)
+Increment Number by 10 加 10 (Control+Shift+上方向键)
+Decrement Number by 10 减10 (Control+Shift+下方向键)
+Increment Number by 0.1 加0.1 (Option+上方向键)
+Decrement Number by 0.1 减0.1 (Option+下方向键)
+Merge Lines 合并行 (Control+M)
+Encode/Decode data:URL image 编码/解码 data:URL 图像 (Control+Shift+i)
+Update Image Size 更新图像尺寸

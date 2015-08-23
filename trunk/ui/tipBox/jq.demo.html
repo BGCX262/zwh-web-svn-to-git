@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Tip Box Demo</title>
+	<link rel="stylesheet" href="jq.tipBox.css">
+	<script src="../lib/jquery.js"></script>
+	<script src="../lib/jq.tipBox.js"></script>
+	<style>
+		body{
+			font: 14px/1.5 "Microsolf YaHei","微软雅黑";
+			color: #000;
+		}
+		.demo{
+			margin: 50px 0 0 300px;
+		}
+		@font-face {
+		  font-family: 'icomoon';
+		  src: url('fonts/icomoon.eot'); /* ie9 */
+		  src: url('fonts/icomoon.eot?#iefix') format('embedded-opentype'), /* ie6-ie8 */
+		      url('fonts/icomoon.woff') format('woff'), /* chrome6+ firefox3.6+ */
+			  url('fonts/icomoon.ttf') format('truetype'), /* chrome firefox opera safari android ios4.2+*/
+			  url('fonts/icomoon.svg#icomoon') format('svg'); /* ios4.1-*/
+		}
+		.tool_tip{
+			position: relative;
+			width: 20px;
+			height: 20px;
+			display: inline-block;
+			color: #7A7A7A;
+			cursor: pointer;
+			font-size: 16px;
+			font-family: 'icomoon';
+			/* fix ie7 */
+			*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe001;&nbsp;');
+			z-index: 1;
+		}
+		.tool_tip:before{
+			content: '\e001';
+		}
+		.tool_tip:hover{
+			color: #4c8bf7;
+		}
+		.demo{
+			height: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="demo">
+		<label>姓名：</label>
+		<input type="text" name="username"/>
+		<span class='JQ_Widget tool_tip' data-widget-type="Widget_Tipbox" data-widget-config="{align:'right',height:40,content:'哈哈，只能输入字母'}"></span>
+	</div>
+
+	<script>
+		$(document).ready(function(){
+
+			$('.JQ_Widget').each(function(){
+				if(this.getAttribute('data-widget-type')=='Widget_Tipbox'){
+					$(this).tipBox();
+				}
+			});
+
+		});
+	</script>
+</body>
+</html>

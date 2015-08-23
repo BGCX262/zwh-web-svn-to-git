@@ -1,0 +1,10 @@
+<header>
+	<section class="blog_banner">
+		<?php if($this->layout()->title):?>
+			<?php echo $this->layout()->title;?>
+			<aside><a href="<?php echo '/'.BLOGGER_NAME.'/post/build/type/title'?>">修改</a></aside>
+		<?php else:?>
+			<aside style="margin-top:60px;"><a href="<?php echo '/'.BLOGGER_NAME.'/post/build/type/title'?>">点此</a> 创建标题</aside>
+		<?php endif;?>
+	</section>
+</header>

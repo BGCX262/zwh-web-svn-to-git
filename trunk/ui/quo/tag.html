@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>tap quo</title>
+	<style type="text/css">
+		.demo{
+			height:100px;
+			background-color:#892471;
+			position:relative;
+		}
+		.demo p{
+			position:absolute;
+			left: 0;
+			display: inline-block;
+			background-color:#6c5c5c;
+		}
+	</style>
+</head>
+<body>
+	<div class="demo">
+		<p id="cont">This is a sentence.</p>
+	</div>
+	<div id="msg"></div>
+	<script type="text/javascript" src="../lib/greensock/plugins/CSSPlugin.js"></script>
+	<script type="text/javascript" src="../lib/greensock/TweenLite.js"></script>
+	<script type="text/javascript" src="../lib/quojs/quo.js"></script>
+	<script type="text/javascript">
+		var msg = document.getElementById('msg');
+		var pc = document.getElementById('cont');
+		
+		$$('.demo').swipeLeft(function(){
+			
+			msg.innerHTML += 'swipeleft happen<br/>';
+			TweenLite.to(pc, 1, {css:{left:"-=200"}});
+		});
+		$$('.demo').swipeRight(function(){
+			msg.innerHTML += 'swiperight happen<br/>';
+			TweenLite.to(pc, 1, {css:{left:"+=200"}});
+		});
+		$$('.demo p').drag(function(e){
+			alert(e)
+			msg.innerHTML += 'drag happen<br/>';
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<section class="category">
+	<table>
+		<thead>
+			<tr>
+				<th class="cate" style="width: 658px">类别</th>
+				<th style="width: 160px">操作</th>
+				<th style="width: 160px">排序</th>
+			</tr>
+		</thead>
+		<tbody>
+		<tr>
+		<td colspan="3">
+		<?php if($this->data):?>
+       		<?php foreach($this->data as $data):?>
+       			<dl>
+       			<dt class="cate">  		
+       					<?php echo $data['name']; ?>
+       					<a class="edit" href="<?php echo '/'.BLOGGER_NAME.'/category/edit/id/'.$data['id']?>">编辑</a>
+						| 
+						<a class="del" href="<?php echo '/'.BLOGGER_NAME.'/category/delete/id/'.$data['id']?>">删除</a>
+						|
+						<a class="up" href="<?php echo '/'.BLOGGER_NAME;?>/category/move/direction/up/id/<?php echo $data['id'];?>">上移</a>
+						|
+						<a class="down" href="<?php echo '/'.BLOGGER_NAME;?>/category/move/direction/down/id/<?php echo $data['id'];?>">下移</a>
+       			</dt>
+       			<?php if(isset($data['cates'])&&$data['cates']): ?>
+	       			<?php foreach($data['cates'] as $sub_data):?>
+	       			<dd class="sub_cates">       			
+	       			   <?php echo $sub_data['sub_name'];?>
+	       			    <a class="edit" href="<?php echo '/'.BLOGGER_NAME.'/articlecategory/edit/id/'.$sub_data['sub_id'].'/pid/'.$data['id']?>">编辑</a>
+						| 
+						<a class="del" href="<?php echo '/'.BLOGGER_NAME.'/articlecategory/delete/id/'.$sub_data['sub_id'].'/pid/'.$data['id']?>">删除</a>
+						|
+						<a class="up" href="<?php echo '/'.BLOGGER_NAME.'/articlecategory/move/direction/up/id/'.$sub_data['sub_id'].'/pid/'.$data['id'];?>">上移</a>
+						|
+						<a class="down" href="<?php echo '/'.BLOGGER_NAME.'/articlecategory/move/direction/down/id/'.$sub_data['sub_id'].'/pid/'.$data['id'];?>">下移</a>
+	       			</dd>
+	       			<?php endforeach;?>
+	       			<p style='text-align:center;padding: 5px 0;'><span><a href="<?php echo '/'.BLOGGER_NAME.'/category/create/pid/'.$data['id'];?>" target="_self">点此</a> 新建二级分类</span></p>
+	       		<?php else: ?>	
+	       			<dd class="sub_cates">
+	       				<p style='text-align:center;padding: 5px 0;'><span>暂无任何分类, <a href="<?php echo '/'.BLOGGER_NAME.'/category/create/pid/'.$data['id'];;?>" target="_self">点此</a> 新建二级分类</span></p>
+	       			</dd>
+       			<?php endif;?>
+       		    </dl>
+       		<?php endforeach;?>
+       		<aside class="new"><a href="<?php echo '/'.BLOGGER_NAME.'/category/create';?>" target="_self">新建类目</a></aside>
+       	<?php else :?>
+       		<p style='text-align:center;padding: 5px 0;'><span>暂无任何分类, <a href="<?php echo '/'.BLOGGER_NAME.'/category/create';?>" target="_self">点此</a> 新建分类</span></p>
+       	<?php endif;?>
+       	</td>
+       	</tr>
+		</tbody>
+	</table>
+</section>
+<style type="text/css">
+	.hover{
+		background-color:#ACE;	
+	}
+	.even{
+		background-color:#F2F2F2;
+	}
+</style>
+<script type="text/javascript">
+/*
+	$('.category .edit').click(function(){
+		var cate = $(this).parent().prev().prev();
+		var cate_name = cate.text();
+	});
+*/
+$('.category table tbody tr:even').addClass('even');
+$('.category table tbody tr').hover(function(){
+
+});
+//alert(1);
+</script>

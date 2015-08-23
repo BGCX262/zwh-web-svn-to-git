@@ -1,0 +1,14 @@
+<h2>当前菜单</h2> 
+<?php if($this->menus != null) { ?> 
+<table class='spreadsheet' cellpadding='0' cellspacing='0'> 
+    <tr> 
+        <th>链接</th> 
+        <th>菜单名</th> 
+    </tr> 
+    <?php echo $this->partialLoop('partials/menuRow.phtml', $this->menus); ?> 
+</table> 
+<?php }else{?> 
+<p>您还没有任何菜单</p> 
+<?php }?> 
+<p><a href='<?php echo '/'.BLOGGER_NAME?>/menu/create'>新建一个菜单</a></p> 
+ 

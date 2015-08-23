@@ -1,0 +1,12 @@
+1. dataset 与 getAttribute  setAttribute性能比较。  
+   结论：dataset性能较低
+http://jsperf.com/html5-data-attribute-dataset-vs-getattribute
+
+2. 深入单例模式
+http://www.cnblogs.com/TomXu/archive/2012/02/20/2352817.html
+
+3. 牛逼的前端工程师
+http://7even.cn/
+
+4. 为之
+http://www.cn-cuckoo.com/2010/10/21/the-design-of-html5-2151.html/comment-page-6#comment-13585

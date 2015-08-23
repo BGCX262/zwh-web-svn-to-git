@@ -1,0 +1,16 @@
+<section class="J_TBox artcate">	
+    <h3 class="hd">文章分类</h3>
+    <section class="bd">
+       <ul class="item_list">
+       <?php if($this->data):?>
+       		<?php foreach($this->data as $data):?>
+       			<li>       			
+       			   <a href="<?php echo '/'.BLOGGER_NAME.'/article/catespec/id/'.$data['id'];?>" title="<?php echo $data['cate']?>" ><?php echo $data['cate'].' ('.$data['total'].')';?></a>
+       			</li>
+       		<?php endforeach;?>
+       	<?php else :?>
+       		<li style='text-align:center;padding: 5px 0;'><span>暂无任何分类！</span></li>
+       	<?php endif;?>
+       </ul>
+    </section>
+</section>

@@ -1,0 +1,20 @@
+<?php 
+	echo $this->headScript(); 
+?>
+<div class="post_edit">
+	<form method="post" action="<?php echo "/".BLOGGER_NAME; ?>/post/update">	
+		<input type="hidden" name="article_id" value="<?php echo $this->article_id;?>" />
+		<input type="hidden" name="section_id" value="<?php echo $this->section_id;?>" />
+		<p class="content">内容</p>
+		<textarea name="content" id="kindeditor" cols=40 rows=20><?php echo $this->content;?></textarea><br/>
+		<script type="text/javascript">
+		        var editor;
+		        KindEditor.ready(function(K) {
+		                editor = K.create('#kindeditor',{width:'980px'});
+		        });
+		</script>
+		<p class="submit">
+			<input type="submit" value="发布" />
+		</p>
+	</form>
+</div>

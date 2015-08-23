@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>how to get event</title>
+</head>
+<body>
+	<div onclick = "foo()">click me to get event</div>
+	<script>
+		function getEvent(){
+			var e = arguments[0] || window.event;
+			if(!e){
+				var c = arguments.callee.caller;
+				while(c){
+					e = c.arguments[0];
+					if(e&&(Event == e.constructor||MouseEvent == e.constructor)){
+						break;
+					}
+					c = c.caller;
+				}
+			}
+			return e
+		}
+		function foo(){
+			var e = getEvent()
+			alert(e);
+		}
+	</script>
+</body>
+</html>

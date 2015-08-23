@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Animate Translate</title>
+	<style type="text/css">
+		.demo{
+			height: 200px;
+			background-color:#DDDDDD;
+			
+			
+		}
+		.demo:hover .move{
+			-webkit-animation-name: movebox; /*动画名称，需要跟@keyframes定义的名称一致*/
+		    -webkit-animation-duration: 2s;/*动画持续的时间长*/
+		    -webkit-animation-iteration-count: infinite;/*动画循环播放的次数*/
+		   -moz-animation-name: movebox; /*动画名称，需要跟@keyframes定义的名称一致*/
+		    -moz-animation-duration: 2s;/*动画持续的时间长*/
+		    -moz-animation-iteration-count: 1;/*动画循环播放的次数*/
+		}
+		.demo .move{
+			display:inline-block;
+			width:50px;
+			height:50px;
+			background-color:#ace;
+			position:relative;
+		}
+		
+		@-webkit-keyframes movebox{
+			0% {
+				background: rgba(96, 203, 27,0.5);
+				left:0;
+				-webkit-transform: rotate(0deg);
+			}
+			100%{
+				background: rgba(96, 203, 27,0.5);
+				left: 600px;
+				-webkit-transform: rotate(360deg);
+			}
+		}
+		@-moz-keyframes movebox{
+			0% {
+				background: rgba(96, 203, 27,0.5);
+				left:0;
+				-moz-transform: rotate(0deg);
+			}
+			100%{
+				background: rgba(96, 203, 27,0.5);
+				left: 600px;
+				-moz-transform: rotate(360deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="demo">
+		<span class='move'>zwh</span>
+	</div>
+</body>
+</html>

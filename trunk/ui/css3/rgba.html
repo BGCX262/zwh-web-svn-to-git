@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>RGBA Demo</title>
+	<style>
+		.demo a{
+			width: 100px;
+			height: 100px;
+			line-height: 100px;
+			
+			display: block;
+			text-decoration: none;
+			text-indent: 5px;
+			font-size: 20px;
+			color: #FFF;
+		}
+		.demo{
+			display: inline-block;
+			background-color: #ef2f5c;
+		}
+		.demo a:hover{
+			color: #000;
+			background-color: #2f62ed;
+			-webkit-animation-name: rgbAni;
+			-webkit-animation-duration: 0.3s;
+			-ms-animation-name: rgbAni;
+			-ms-animation-duration: 0.3s;
+			animation-name: rgbAni;
+			animation-duration: 0.3s;
+			text-indent: 30px;
+		}
+		@-ms-keyframes rgbAni{
+			from{color:#FFF;background: rgba(47,98,237,0);text-indent: 5px;}
+			to{color:#000;background: rgba(47,98,237,1);text-indent: 30px;}
+		}
+		@-webkit-keyframes rgbAni{
+			from{color:#FFF;background: rgba(47,98,237,0);text-indent: 5px;}
+			to{color:#000;background: rgba(47,98,237,1);text-indent: 30px;}
+		}
+		@keyframes rgbAni{
+			from{olor:#FFF;background: rgba(47,98,237,0);text-indent: 5px;}
+			to{background: rgba(47,98,237,1);text-indent: 30px;}
+		}
+	</style>
+</head>
+<body>
+	<div class="demo">
+		<a href="#">anim</a>
+	</div>
+	<!--[if lte IE 10]>
+	<script type="text/javascript" src="../lib/greensock/plugins/CSSPlugin.js"></script>
+	<script type="text/javascript" src="../lib/greensock/TweenLite.js"></script>
+	<script type="text/javascript" src="../lib/jquery.js"></script>
+
+	<script>
+		var $a = $('.demo > a');
+		$a[0].style.textIndent = '5px';
+		$a.hover(function(){
+			TweenLite.to(this, 0.3, {css:{textIndent:'30px'}});
+		},function(){
+			TweenLite.to(this, 0.3, {css:{textIndent:'5px'}});
+		});
+	</script>
+	<![endif]-->
+</body>
+</html>

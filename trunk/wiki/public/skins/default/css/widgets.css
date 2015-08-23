@@ -1,0 +1,171 @@
+body{
+	background:url(../images/body_bg.jpg) 0 0 repeat;
+}
+.J_TBox{
+    margin-bottom: 10px;
+}
+.J_TBox .hd{
+	border-bottom:none;
+    color: #393939;
+    font-size: 12px;
+    font-weight: normal;
+    height: 27px;
+    line-height: 27px;
+    padding: 0 0 0 15px;
+    background-color:#FFF;
+}
+.J_TBox .bd{
+
+}
+.content .main{
+	border-left:2px dashed #337FE5;
+}
+/*
+ * aboutme 
+ */
+
+.aboutme .bd{
+    padding-top: 15px;
+}
+.aboutme .bd .userface{
+    text-align: center;
+}
+.aboutme .bd .userface a img{
+    width: 140px;
+    height: 140px;
+}
+.aboutme .bd ul.rank{
+    margin: 5px 0 5px 20px;
+}
+.aboutme .bd .statistics{
+    display: block;
+    margin: 0 20px;
+    border-top: 1px dashed #CCCCCC;
+}
+.aboutme .bd ul.statistics li{
+    float: left;
+    margin: 4px 0;
+    width: 50%;
+}
+/*
+ * calender 
+ */
+.calendar{
+    background-color: #FFF;
+    border: 1px solid #CCC;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.calendar table{
+    margin: 0 auto;
+    border-spacing: 2px;
+    border-collapse: separate;
+}
+.calendar table caption{
+    color: #333333;
+    font-weight: bold;
+    padding: 4px 0 4px;
+}
+.calendar table th{
+    background-color: #4A9CE4;
+    border: 1px solid #4A9CE4;
+    color: #FFFFFF;
+    padding: 3px 6px;
+    text-align: center;
+}
+.calendar table td{
+    border: 1px solid #CCC;
+    text-align: center;
+    padding: 3px 6px;
+}
+.calendar table td.today{
+    background-color: #4A9CE4;
+    color: #FFF;
+    border-color: #4A9CE4;
+}
+.calendar table td a.post_day{
+    color: #FF6666;
+}
+/*
+ * newcomment 
+ */
+.newcomment .bd{
+	*padding-bottom: 5px;
+}
+.newcomment .bd .item_list li{
+    vertical-align: top;
+    color: #0196E3;
+}
+.newcomment .bd .item_list li p{
+  float: left;
+  width: 180px;
+}
+.newcomment .bd .item_list li p a{
+    color: #000;
+    text-decoration: none;
+}
+.newcomment .bd .item_list li img{
+    float: left;
+    margin: 5px;
+}
+/*
+ * artcate 
+ */
+.artcate .bd .item_list li{
+    padding: 3px 0 0 5px;
+}
+.artcate .bd .item_list li a{
+    color: #000;
+}
+/*
+ * readrank  
+ */
+.readrank .bd .item_list li{
+    padding: 3px 0 0 5px;
+}
+.readrank .bd .item_list li a{
+    color: #000;
+}
+/*
+ * comrank 
+ */
+.comrank .bd .item_list li{
+    padding: 3px 0 0 5px;
+}
+.comrank .bd .item_list li a{
+    color: #000;
+}
+/*
+ * recoart 
+ */
+.recoart .bd .item_list li{
+    padding: 3px 0 0 5px;
+}
+.recoart .bd .item_list li a{
+    color: #000;
+}
+/*
+ * frlink
+ */
+.frlink{
+    margin: 10px 0 0;
+}
+.frlink .hd{
+    height: 25px;
+    line-height: 25px;
+    background :url("/global/images/bg.png") repeat 0 -271px #FFFFFF;
+}
+.frlink .bd{
+     padding: 10px 0;
+}
+.frlink .bd ul{
+    display: inline;
+}
+.frlink .bd ul li{
+    display: inline;
+    margin: 3px 10px 3px 5px;
+}
+.frlink .bd ul li a{
+    color: #000;
+}
+

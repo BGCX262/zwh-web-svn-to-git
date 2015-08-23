@@ -1,0 +1,77 @@
+<header>
+	<section id="top_nav">
+		<nav class="friend_nav">
+			<?php 
+       			echo  $this->action('render', 'menu', null,array('menu' => $this->topMenuId));
+       		?>
+		</nav>
+		<nav class="help_nav">
+			<?php 
+				$user = new Zend_Session_Namespace('user');
+				//echo $user->nickname;
+				if(!empty($user->nickname)){
+					echo "<span style='color:red;'>".$user->nickname."</span> 欢迎您！|";
+				}else{
+					echo "<span style='color:red;'>您还未登录！</span>|
+						<a href='/".BLOGGER_NAME."/user/login'>登录</a>|
+						<a href='/register/index'>注册</a>|";
+				}
+			?>
+			<?php 
+				if(!empty($user->nickname)){
+					echo "<a href='/".BLOGGER_NAME."/user/logout'>退出</a>";
+				}
+			?>
+		</nav>
+	</section>
+	<div id="top_menu">  
+  <div class="searchform">
+     <ul>
+	  <li class="left"></li>
+        <li class="home"><a href="<?php echo '/'.BLOGGER_NAME;?>">首 页</a></li>
+		<li>
+           <form method="post" action="<?php echo '/'.BLOGGER_NAME.'/article/search';?>">
+              <input type="text" class="inputtext" id="keywords" value="请输入关键字.." name="keywords">  
+              <input type="submit" id="submit" class="submit" value="" />
+               <script type="text/javascript">
+               		var key = "请输入关键字..";
+					$("#keywords").focus(function(){
+						$(this).val('');
+					});
+					$("#keywords").blur(function(){
+						if($(this).val()==''){
+							$(this).val(key);
+						}	
+					});
+					$("#submit").click(function(){
+						if($("#keywords").val()==key){
+							window.location.href ="/<?php echo BLOGGER_NAME?>/article/index";
+							return false;
+						}
+					});
+               </script>
+		   </form>
+        </li>
+        <li class="right"></li>  
+    </ul>
+  </div>
+    <div id="mainmenu_top"> 
+	<div class="menu-lft"><div class="menu-rht">
+		<ul class="navigation">
+			<li><a href="<?php echo '/'.BLOGGER_NAME.'/article/index'?>">目录视图</a></li>
+			<li><a href="<?php echo '/'.BLOGGER_NAME.'/article/list'?>">摘要视图</a></li>
+			<?php if(isset($user->nickname)&&$user->nickname==BLOGGER_NAME):?>
+			<li><a href="<?php echo '/'.BLOGGER_NAME.'/category'?>">管理博客</a></li>
+			<li><a href="<?php echo '/'.BLOGGER_NAME.'/post' ?>">写文章</a></li>
+			<?php endif;?>
+		</ul>
+       <?php 
+       		echo  $this->action('render', 'memfriendlink', null);
+       ?>
+    </div></div>
+	</div> 
+</div>
+	<section class="blog_banner">
+		<h1><?php echo $this->layout()->welcom?></h1>
+	</section>
+</header>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.drag-box{
+		width: 300px;
+		height: 300px;
+		position: Fixed;
+		left:0;
+		top: 0;
+		background-color: #F0F;
+	}
+</style>
+<script type="text/javascript">
+	function Drag(obj){
+		obj.onmousedown = Drag.drag;
+	}
+	Drag.drag = function(evt){
+		var evt = evt || window.event;
+		if(document.selection && document.selection.empty){
+			document.selection.empty(); //ie
+		}else if(window.getSelection){
+			window.getSelection().removeAllRanges(); //w3c
+		}
+		document.onmouseup = Drag.stop;
+		
+		var _self = this;
+		document.onmousemove = function(evt){
+			Drag.move.call(_self, evt);
+		}
+		this.offset = {
+			x: evt.offsetX || evt.layerX,
+			y: evt.offsetY || evt.layerY
+		};
+		return false;
+	}
+	Drag.stop = function(){
+		document.onmouseup = null;
+		document.onmousemove = null;
+	}
+	Drag.move = function(evt){
+		var evt = evt || window.event;
+		this.style.left = evt.clientX - this.offset.x + 'px';
+		this.style.top = evt.clientY - this.offset.y + 'px';
+		//alert(this);
+		return false;
+	}
+</script>
+</head>
+<body>
+	<div id="demo" class="drag-box">
+		box
+	</div>
+	<script type="text/javascript">
+		var demo = document.getElementById('demo');
+		new Drag(demo);
+	</script>
+</body>
+</html>

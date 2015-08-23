@@ -1,0 +1,25 @@
+<section class="J_TBox artcate">	
+    <h3 class="hd"><a href="<?php echo '/'.BLOGGER_NAME.'/category/' ?>" target="_self">Fix</a></h3>
+    <section class="bd" style="min-height:475px;">
+       <ul class="item_list">
+       <?php if($this->data):?>
+       		<?php foreach($this->data as $data):?>
+       			<li>
+       				<h1>
+       					<?php echo $data['name']; ?>
+       				</h1>
+       			</li>
+       			<?php if(isset($data['cates'])&&$data['cates']): ?>
+	       			<?php foreach($data['cates'] as $sub_data):?>
+	       			<li>       			
+	       			   <a href="<?php echo '/'.BLOGGER_NAME.'/article/detail/id/'.$sub_data['sub_id'];?>" title="<?php echo $sub_data['sub_name'];?>" ><?php echo $sub_data['sub_name'];?></a>
+	       			</li>
+	       			<?php endforeach;?>
+	       		<?php endif;?>
+       		<?php endforeach;?>
+       	<?php else :?>
+       		<li style='text-align:center;padding: 5px 0;'><span>暂无任何分类！</span></li>
+       	<?php endif;?>
+       </ul>
+    </section>
+</section>

@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>slide jquery</title>
+	<script type="text/javascript" src="../lib/jquery.js"></script>
+	<style type="text/css">
+		.demo{
+			background-color:#6179db;
+			width:200px;
+			color:#EEE;
+		}
+		.demo h3.ks-trigger{
+			margin: 5px 0;
+			padding: 5px 0;
+		}
+		.demo .ks-content{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="demo">
+		<h3 class="ks-trigger">show me</h3>
+		<div class="ks-content">
+			This is something,maybe an article or report.
+		Talkging about something.
+		bla bla bla....
+		bla bla bla.....
+		</div>
+	</div>
+	<script type="text/javascript">
+		var $ksContent = $('.demo .ks-content')
+		$('.demo').mouseenter(function(){
+			$ksContent.is(':animated') || $ksContent.slideDown(200);
+		});
+		$('.demo').mouseleave(function(){
+			
+			$('.demo .ks-content').stop(true,true).slideUp(100);
+		});
+	</script>
+</body>
+</html>

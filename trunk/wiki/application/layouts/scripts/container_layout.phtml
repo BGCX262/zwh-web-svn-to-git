@@ -1,0 +1,42 @@
+<?php 
+	echo $this->doctype();
+?>
+<html>
+	<head>
+	<?php
+ 	echo $this->headTitle(BLOGGER_NAME."的博客");
+	echo $this->headMeta()->appendHttpEquiv('Content-Type','text/html; charset=UTF-8')
+                 ->appendHttpEquiv('Content-Language', 'zh_CN');
+	$this->headLink()->appendStylesheet('/global/css/global.css')
+					 ->appendStylesheet('/global/css/backend.css')
+					 ->appendStylesheet('/global/css/main.css')
+					 ->headLink(array('rel' => 'shortcut icon',
+							'href' => '/global/images/favicon.ico'),
+							'PREPEND');
+	?>
+	<!--[if IE]>  
+	<script src="/lib/html5.js"></script>  
+	<![endif]-->
+	<script type = "text/javascript"   src = "/lib/jquery-1.7.1.js" > </script >
+	<?php
+		echo $this->loadSkin($this->skin);
+		echo $this->headLink();
+	?>
+	</head>
+	<body>
+<?php
+	//This is header 
+	echo $this->render("admin_header.phtml");
+?>
+<section id="content">
+		<?php 
+			//This is content
+			echo $this->layout()->content;
+		?>
+</section>
+<?php
+	//This is footer
+	echo $this->render("footer.phtml");
+?>
+</body>
+</html>

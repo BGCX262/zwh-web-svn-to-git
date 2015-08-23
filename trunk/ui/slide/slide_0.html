@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <link rel="stylesheet" href="../lib/base.css" />
+   <link rel="stylesheet" href="slide.css" />
+   <script src="../lib/jquery.js" type="text/javascript"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){
+     	
+    	 var $nav_childs = $('.J_TWidget .ks-switchable-nav li');
+    	 var $con_childs = $('.J_TWidget .ks-switchable-content li');
+    	 var n = 0;  //当前激活的位置
+    	 var t; //interval标识
+    	 var count = $nav_childs.length;
+    	 for(var j=0;j<count;j++){
+    	 	  if(j==0){
+    	 		  $nav_childs[j].className = "ks-active";
+    	 		  $con_childs[j].className = "";
+    	 	  }else{
+    	 		  $nav_childs[j].className = "";
+    	 		  $con_childs[j].className = "hidden";
+    	 	  }
+    	 }
+    	 //nav li默认第一个为激活状态
+    	 var $active_elm = $nav_childs.eq(0);
+    	 var $active_con_elm = $con_childs.eq(0);
+    	 function autoShow(){
+    	 	  return function(){
+    	 		  n = (n>=(count-1)) ? 0 : ++n;
+    	   	  	  $nav_childs.eq(n).trigger('click');
+    	 	  }
+    	 }
+    	 $nav_childs.click(function(){
+
+    	 	  var i = $(this).index(); //获取nav元素内的值
+    	 	  n = i;  
+    	 	  $active_elm.removeClass('ks-active');
+    	 	  $(this).addClass('ks-active');
+    	 	  $active_elm = $(this);
+    	 	  
+    	 	  $active_con_elm.addClass('hidden');
+    	 	  $con_childs.eq(i).removeClass('hidden');
+    	 	  $active_con_elm = $con_childs.eq(i);
+ 
+    	 });
+    	 $nav_childs.hover(function(){
+    		 clearInterval(t);
+    		 $(this).trigger('click');
+    	 },function(){
+    		 t = setInterval(autoShow(),3000);
+    	 });
+    	 
+    	 
+    	 t = setInterval(autoShow(),3000);
+    	 
+     })
+   </script>
+ </head>
+ <body>
+<div class="J_TWidget slide" 
+data-widget-type="Slide" data-widget-config="{'effect':'scrolly','easing':'easeOutStrong','countdown':true}">
+<ul class="ks-switchable-nav">
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+	<li>5</li>
+</ul>
+<ol class="ks-switchable-content">
+    <li class="">
+        <a href="#" target="_blank">
+            <img alt="" src="images/1.jpg"/>
+        </a>
+    </li>
+    <li class="hidden">
+        <a target="_blank" href="#">
+            <img alt="" width="470" height="150" border="0" src="images/2.jpg"/>
+        </a>
+    </li>
+    <li class="hidden">
+        <a target="_blank" href="#">
+            <img alt="" width="470" height="150" border="0" src="images/3.jpg"/>
+        </a>
+    </li>
+    <li class="hidden">
+        <a href="#" target="_blank">
+            <img alt="" src="images/4.jpg"/>
+        </a>
+    </li>
+    <li class="hidden">
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="470" height="150" class="holiday-logo">
+            <param name="movie" value="http://img04.taobaocdn.com/tps/i4/T1bblrXfBrXXXXXXXX.swf"/>
+			<param name="quality" value="high"/><param name="swfversion" value="8.0.0"/>
+			<param name="wmode" value="opaque"/>
+            <!--[if !IE]>-->
+                <object type="application/x-shockwave-flash" data="http://img04.taobaocdn.com/tps/i4/T1bblrXfBrXXXXXXXX.swf" 
+				width="470" height="150" name="holiday-logo" class="holiday-logo">
+                    <param name="wmode" value="opaque"/>
+                </object>
+            <!--<![endif]-->
+        </object>
+    </li>
+</ol>
+</div>
+</body>
+</html>

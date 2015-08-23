@@ -1,0 +1,28 @@
+.hide{
+	display: none;
+}
+.Dialog_Widget{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.Dialog_Widget .bg{
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: #000;
+	filter:alpha(opacity=50);
+	opacity: 0.5;
+	z-index: 9998;
+}
+.Dialog_Widget .dialog{
+	position: absolute;
+	z-index: 9999;
+	border: 1px solid #417cea;
+}
+
+.Dialog_Widget .dialog .title{
+	background-color: #ace;
+	height: 18px;
+	cursor: move;
+}

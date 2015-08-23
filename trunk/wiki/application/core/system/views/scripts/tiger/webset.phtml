@@ -1,0 +1,37 @@
+<section class="blogger_set">
+	<form enctype="multipart/form-data" action="/tiger/webset" method="post">
+		<table>
+			<tbody>
+				<tr>
+					<td valign="top" class="right">博客logo：</td>
+					<td>		
+						<input type="file" id="blog_logo" name="blog_logo">
+					</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td valign="top" class="right">缓存设置：</td>
+					<td>
+						<ul class="cache_set">
+							<li><label for="cacheon">开启</label><input type="radio" checked="checked" value="true" id="cacheon" name="cache"></li>
+							<li><label for="cacheoff">关闭</label><input type="radio" value="false" id="cacheoff" name="cache"></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" class="right">缓存时间：</td>
+					<td>
+						<div class="oneline">
+							<input type="text" id="cache_time" class="inputbox" name="cache_time" value="">
+						</div>
+					</td>
+					<td><span class="field_notice">单位为秒</span></td>
+				</tr>
+				<tr>
+					<td valign="top" class="right"></td>
+					<td class="padding"><input type="submit" value="保存" class="submit"></td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+</section>

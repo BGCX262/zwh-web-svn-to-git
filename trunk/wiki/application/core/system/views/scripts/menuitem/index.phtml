@@ -1,0 +1,15 @@
+<h1><?php echo $this->menu->name;?></h1> 
+<table class="user_navs"> 
+<?php if($this->items != null):?> 
+    <tr> 
+        <th class="th_link" style="width:300px">操作 </th> 
+        <th style="width:200px">名称</th>  
+        <th style="width:300px">链接</th> 
+        <th style="width:178px">浏览权限</th>
+    </tr> 
+    <?php echo $this->partialLoop('partials/menuItemRow.phtml', $this->items); ?> 
+<?php else: ?> 
+<tr><td colspan="4">您还没有给用户设置导航链接</td></tr> 
+<?php endif; ?> 
+<tr><td class="add_nav"><a href='/menuitem/add/menu/<?php echo $this->menu->id ?>'>添加一个新的导航</a></td></tr>
+</table>  

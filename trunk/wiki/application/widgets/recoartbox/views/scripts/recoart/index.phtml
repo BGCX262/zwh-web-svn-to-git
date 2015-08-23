@@ -1,0 +1,12 @@
+<section class="J_TBox recoart">	
+    <h3 class="hd">热门文章推荐</h3>
+    <section class="bd">
+       <ul class="item_list">
+       		<?php foreach($this->data as $data):?>
+       			<li>       			
+       			   <a href="<?php echo '/'.$data['nickname'].'/article/detail/id/'.$data['id'];?>" title="<?php echo $data['title']?>" ><?php echo $data['title'];?></a>
+       			</li>
+       		<?php endforeach;?>
+       </ul>
+    </section>
+</section>
